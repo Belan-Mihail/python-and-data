@@ -18,14 +18,28 @@ def text_analyse(filename):
     words_count = len(words)
     print(words_count)
 
+     # sentences count
     sentences_count = text.count(".") + text.count("!") + text.count("?")
     print(sentences_count)
 
+    # paragraph count
     paragraph_count = text.count('\n\n') + 1
     print(paragraph_count)
 
+    # words count
+    word_freq = {}
+    for word in words:
+        word_freq[word] = word_freq.get(word, 0) + 1
 
-    
+    # sort words
+    most_common_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:10]
+
+
+    print("10 most common words:")
+    for word, freq in most_common_words:
+        print(f"{word}: {freq}")
+
+
     
 
 filename = "d.txt"

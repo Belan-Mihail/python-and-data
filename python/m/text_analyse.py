@@ -12,7 +12,8 @@ def text_analyse(filename):
         
 
     # remove punctuation marks and convert to lowercase
-    words = text.translate(str.maketrans('', '', string.punctuation)).lower().split
+    words = text.translate(str.maketrans('', '', string.punctuation)).lower().split()
+    print(words)
     
 
 filename = "d.txt"

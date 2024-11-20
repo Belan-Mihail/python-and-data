@@ -17,6 +17,11 @@ def text_analyse(filename):
     # words count
     words_count = len(words)
     print(words_count)
+
+    sentences_count = text.count(".") + text.count("!") + text.count("?")
+    print(sentences_count)
+
+    
     
 
 filename = "d.txt"

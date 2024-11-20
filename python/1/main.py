@@ -5,6 +5,11 @@
 # ##################################################################################
 # 3 Email Slicer
 
+email = input("Enter your email: ").strip()
+username = email[:email.index("@")]
+domainname = email[email.index("@") + 1:]
+format = (f"Your name is {username}. Your domain is {domainname}")
+print(format)
 
 # ##################################################################################
 # 2 Alarm Clock

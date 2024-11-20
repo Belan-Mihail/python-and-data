@@ -21,6 +21,10 @@ def text_analyse(filename):
     sentences_count = text.count(".") + text.count("!") + text.count("?")
     print(sentences_count)
 
+    paragraph_count = text.count('\n\n') + 1
+    print(paragraph_count)
+
+
     
     
 

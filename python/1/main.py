@@ -1,18 +1,31 @@
 # projects from https://thecleverprogrammer.com/2021/01/13/acronyms-using-python/
 
+
+# ##################################################################################
+# 6 Colored Terminal Text
+import colorama
+
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+
+print(Fore.BLUE+Back.YELLOW+"Hi My name is Mykhailo Bilan "+ Fore.YELLOW+ Back.BLUE+"I am a programmer")
+print(Back.CYAN+"Hi My name is Mykhailo Bilan")
+print(Fore.RED+ "Hi My name is Mykhailo Bilan")
+
+
 # ##################################################################################
 # 5 QR Code Generator
 
-import pyqrcode
-from pyqrcode import QRCode 
+# import pyqrcode
+# from pyqrcode import QRCode 
 
-# Url
-url = "https://github.com/Belan-Mihail"
+# # Url
+# url = "https://github.com/Belan-Mihail"
 
-# QR Code qenerate
-qr = pyqrcode.create(url)
+# # QR Code qenerate
+# qr = pyqrcode.create(url)
 
-qr.svg("mygithub", scale=8)
+# qr.svg("mygithub", scale=8)
 
 
 # ##################################################################################

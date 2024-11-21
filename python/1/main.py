@@ -1,16 +1,33 @@
 # projects from https://thecleverprogrammer.com/2021/01/13/acronyms-using-python/
 
 # ##################################################################################
+# 5 QR Code Generator
+
+import pyqrcode
+from pyqrcode import QRCode 
+
+# Url
+url = "https://github.com/Belan-Mihail"
+
+# QR Code qenerate
+qr = pyqrcode.create(url)
+
+qr.svg("mygithub", scale=8)
+
+
+# ##################################################################################
 # 4 Generate Password
 
-import random
-passlen = int(input("Enter password lenght: "))
+# import random
+# passlen = int(input("Enter password lenght: "))
 
-s="abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+# possible symbols for password
+# s="abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
 
-password = "".join(random.sample(s, passlen))
+# password generate
+# password = "".join(random.sample(s, passlen))
 
-print(password)
+# print(password)
 
 # ##################################################################################
 # 3 Email Slicer

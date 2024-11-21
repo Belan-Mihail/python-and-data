@@ -1,15 +1,25 @@
 # projects from https://thecleverprogrammer.com/2021/01/13/acronyms-using-python/
 
+# ##################################################################################
+# 4 Generate Password
 
+import random
+passlen = int(input("Enter password lenght: "))
+
+s="abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+
+password = "".join(random.sample(s, passlen))
+
+print(password)
 
 # ##################################################################################
 # 3 Email Slicer
 
-email = input("Enter your email: ").strip()
-username = email[:email.index("@")]
-domainname = email[email.index("@") + 1:]
-format = (f"Your name is {username}. Your domain is {domainname}")
-print(format)
+# email = input("Enter your email: ").strip()
+# username = email[:email.index("@")]
+# domainname = email[email.index("@") + 1:]
+# format = (f"Your name is {username}. Your domain is {domainname}")
+# print(format)
 
 # ##################################################################################
 # 2 Alarm Clock

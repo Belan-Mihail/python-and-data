@@ -2,15 +2,49 @@
 
 
 # ##################################################################################
+# 7 Python Program to Convert Roman Numbers to Decimals
+
+taillies = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000
+}
+
+def RomanNumeraltoDecimal(romanNumeral):
+    sum = 0
+    for i in range(len(romanNumeral) - 1):
+        left = romanNumeral[i]
+        print(f"left {left}")
+        right = romanNumeral[i+1]
+        print(f"right {right}")
+        if taillies[left] < taillies[right]:
+            print(f"line 25. sum {sum} - tailes-left {taillies[left]}")
+            sum -= taillies[left]
+        else:
+            print(f"line 28. sum {sum} + tailes-left {taillies[left]}")
+            sum += taillies[left]
+    print(f"line 30. sum {sum} + tailes-left {taillies[romanNumeral[-1]]} ")
+    sum += taillies[romanNumeral[-1]]
+    return sum
+
+a = RomanNumeraltoDecimal("XVIII")
+print(a)
+
+
+# ##################################################################################
 # 6 Colored Terminal Text
-import colorama
+# import colorama
 
-from colorama import Fore, Back, Style
-colorama.init(autoreset=True)
+# from colorama import Fore, Back, Style
+# colorama.init(autoreset=True)
 
-print(Fore.BLUE+Back.YELLOW+"Hi My name is Mykhailo Bilan "+ Fore.YELLOW+ Back.BLUE+"I am a programmer")
-print(Back.CYAN+"Hi My name is Mykhailo Bilan")
-print(Fore.RED+ "Hi My name is Mykhailo Bilan")
+# print(Fore.BLUE+Back.YELLOW+"Hi My name is Mykhailo Bilan "+ Fore.YELLOW+ Back.BLUE+"I am a programmer")
+# print(Back.CYAN+"Hi My name is Mykhailo Bilan")
+# print(Fore.RED+ "Hi My name is Mykhailo Bilan")
 
 
 # ##################################################################################

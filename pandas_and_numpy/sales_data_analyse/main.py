@@ -45,7 +45,7 @@ df.groupby('Region'):
 df["Month"] = df['Date'].dt.month
 print(df)
 monthly_sales = df.groupby('Month')['Sales'].sum()
-print(monthly_sales)
+print("monthly sales print:", monthly_sales)
 best_month = monthly_sales.idxmax()
 print(f"Best month is {best_month}")
 
@@ -55,5 +55,15 @@ print(f"Best month is {best_month}")
 .head(5)
 Этот метод выбирает первые 5 элементов из серии. В нашем случае, это будут 5 компаний с наибольшим количеством продаж.
 """
-best_companies = df['Company'].value_counts().head(5)
-print(f"Best compynies are: {best_companies}")
+# best_companies = df['Company'].value_counts().head(5)
+# print(f"Best compynies are: {best_companies}")
+
+plt.figure(figsize=(8, 4))
+print("Montly sales.index", monthly_sales.index)
+print("Montly sales.values", monthly_sales.values)
+plt.plot(monthly_sales.index, monthly_sales.values)
+plt.xlabel('Month')
+plt.ylabel('Sales value')
+plt.title('Monthly sales dynamic')
+plt.show()
+

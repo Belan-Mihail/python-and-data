@@ -87,3 +87,9 @@ print(f"Best month is {best_month}")
 # 9 print head and dtypes
 print("print head \n", df.head())
 print("print dtypes\n", df.dtypes)
+
+# 10 check missing values in df
+missing_values = df.isnull().sum()
+print(missing_values)
+
+# у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 

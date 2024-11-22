@@ -70,8 +70,16 @@ print(f"Best month is {best_month}")
 # plt.show()
 
 # 7 Average sales amount by region
-avarage_sales_by_region = df.groupby('Region')['Sales'].mean()
-min_sales_by_region = df.groupby('Region')['Sales'].min()
-print("\nMin sales by region is: ", min_sales_by_region)
-print("\nAvarage sales by region is: ", avarage_sales_by_region)
+# avarage_sales_by_region = df.groupby('Region')['Sales'].mean()
+# min_sales_by_region = df.groupby('Region')['Sales'].min()
+# print("\nMin sales by region is: ", min_sales_by_region)
+# print("\nAvarage sales by region is: ", avarage_sales_by_region)
 
+
+# 8 sales amount by Qatar
+min_sales_by_qatar = df.groupby('Region')['Sales'].min()['Qatar']
+print(min_sales_by_qatar, " - Qatar min")
+max_sales_by_qatar = df.groupby('Region')["Sales"].max()["Qatar"]
+print(max_sales_by_qatar, " - Qatar max")
+average_sales_in_qatar = df.groupby('Region')['Sales'].mean()['Qatar']
+print(average_sales_in_qatar, " - Qatar avg")

@@ -3,21 +3,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# loading data from csv
+# 1 loading data from csv
 df = pd.read_csv("sales_data.csv")
-print(df)
+# print(df)
 
-# Converting the 'Date' column to date format
+# 2 Converting the 'Date' column to date format
 df['Date'] = pd.to_datetime(df['Date'])
-print(df)
+# print(df)
 
-# Which regions showed the highest sales volume over the entire period?
+# 3 Which regions showed the highest sales volume over the entire period?
 total_sales_by_region = df.groupby('Region')['Sales'].sum()
-print(f"Analyse by region and sales summ:\n", total_sales_by_region)
+# print(f"Analyse by region and sales summ:\n", total_sales_by_region)
 total_sales_by_region = total_sales_by_region.sort_values(ascending=False)
-print(f"Sorting by values:\n", total_sales_by_region)
+# print(f"Sorting by values:\n", total_sales_by_region)
 
-# total_sales_by_region = df.groupby('Region')['Sales'].sum()
+# 3.1 total_sales_by_region = df.groupby('Region')['Sales'].sum()
 """
 total_sales_by_region = df.groupby('Region')['Sales'].sum()
 Используйте код с осторожностью.
@@ -40,3 +40,12 @@ df.groupby('Region'):
 Суммирование продаж: Для каждой группы (региона) суммируются значения в столбце 'Sales'.
 Сохранение результатов: Результаты суммирования сохраняются в переменной total_sales_by_region.
 """
+
+# 4- The best month
+df["Month"] = df['Date'].dt.month
+print(df)
+monthly_sales = df.groupby('Month')['Sales'].sum()
+print(monthly_sales)
+best_month = monthly_sales.idxmax()
+print(f"Best month is {best_month}")
+

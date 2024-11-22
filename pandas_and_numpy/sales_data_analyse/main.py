@@ -58,12 +58,20 @@ print(f"Best month is {best_month}")
 # best_companies = df['Company'].value_counts().head(5)
 # print(f"Best compynies are: {best_companies}")
 
-plt.figure(figsize=(8, 4))
-print("Montly sales.index", monthly_sales.index)
-print("Montly sales.values", monthly_sales.values)
-plt.plot(monthly_sales.index, monthly_sales.values)
-plt.xlabel('Month')
-plt.ylabel('Sales value')
-plt.title('Monthly sales dynamic')
-plt.show()
+# 6 Monthly sales graph
+
+# plt.figure(figsize=(8, 4))
+# print("Montly sales.index", monthly_sales.index)
+# print("Montly sales.values", monthly_sales.values)
+# plt.plot(monthly_sales.index, monthly_sales.values)
+# plt.xlabel('Month')
+# plt.ylabel('Sales value')
+# plt.title('Monthly sales dynamic')
+# plt.show()
+
+# 7 Average sales amount by region
+avarage_sales_by_region = df.groupby('Region')['Sales'].mean()
+min_sales_by_region = df.groupby('Region')['Sales'].min()
+print("\nMin sales by region is: ", min_sales_by_region)
+print("\nAvarage sales by region is: ", avarage_sales_by_region)
 

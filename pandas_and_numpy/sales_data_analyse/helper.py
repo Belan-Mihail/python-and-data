@@ -29,3 +29,4 @@ print(f"After diff() {df}")
 # 2 2023-02-12   42 days
 # 1 2023-02-15    3 days
 # 3 2023-03-31   44 days
+

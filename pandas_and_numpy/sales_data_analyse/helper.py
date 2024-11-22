@@ -21,3 +21,11 @@ print(diff)  # -42 days
 # Group by month and count the number of records
 monthly_counts = df.groupby(df['Date'].dt.month).size()
 print(monthly_counts)
+
+# Calculate the difference between consecutive dates
+df['Date_Diff'] = df['Date'].diff()
+print(f"After diff() {df}")
+# 0 2023-01-01       NaT
+# 2 2023-02-12   42 days
+# 1 2023-02-15    3 days
+# 3 2023-03-31   44 days

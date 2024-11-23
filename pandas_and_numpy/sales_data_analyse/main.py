@@ -103,4 +103,8 @@ print(f"Best month is {best_month}")
 # companies_starting_with_a = df[df['Company'].str.startswith('A')]
 # print("Companies starting with A", companies_starting_with_a)
 
+# 14 find all companies starting with "d"
+companies_endig_with_d = df[df['Company'].str.endswith('d')]
+print("Companies ending with d", companies_endig_with_d)
+
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 

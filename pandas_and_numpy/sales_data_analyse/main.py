@@ -12,9 +12,9 @@ df['Date'] = pd.to_datetime(df['Date'])
 # print(df)
 
 # 3 Which regions showed the highest sales volume over the entire period?
-total_sales_by_region = df.groupby('Region')['Sales'].sum()
+# total_sales_by_region = df.groupby('Region')['Sales'].sum()
 # print(f"Analyse by region and sales summ:\n", total_sales_by_region)
-total_sales_by_region = total_sales_by_region.sort_values(ascending=False)
+# total_sales_by_region = total_sales_by_region.sort_values(ascending=False)
 # print(f"Sorting by values:\n", total_sales_by_region)
 
 # 3.1 total_sales_by_region = df.groupby('Region')['Sales'].sum()
@@ -42,12 +42,12 @@ df.groupby('Region'):
 """
 
 # 4- The best month
-df["Month"] = df['Date'].dt.month
-print(df)
-monthly_sales = df.groupby('Month')['Sales'].sum()
-print("monthly sales print:", monthly_sales)
-best_month = monthly_sales.idxmax()
-print(f"Best month is {best_month}")
+# df["Month"] = df['Date'].dt.month
+# print(df)
+# monthly_sales = df.groupby('Month')['Sales'].sum()
+# print("monthly sales print:", monthly_sales)
+# best_month = monthly_sales.idxmax()
+# print(f"Best month is {best_month}")
 
 # 5 Most active companies
 """
@@ -112,8 +112,16 @@ print(f"Best month is {best_month}")
 # print("so companis: ", companies_contain_soft)
 
 # 16 find all companis with long name
-companies_with_long_name = df[df['Company'].str.len() > 30]
-print("Long name companies", companies_with_long_name)
+# companies_with_long_name = df[df['Company'].str.len() > 30]
+# print("Long name companies", companies_with_long_name)
+
+# 17 find all companies starting with a case insensitive
+# companies_with_a = df[df["Company"].str.lower().str.startswith('a')]
+# print('Companies starting with a', companies_with_a)
+
+# 18 
+
 
 # all companies from region Qatar
+# most long name
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 

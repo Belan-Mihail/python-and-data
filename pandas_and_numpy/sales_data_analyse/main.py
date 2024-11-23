@@ -130,6 +130,5 @@ print(companies_from_qatar)
 print(qatar_companies_list)
 
 
-# all companies from region Qatar
-# most long name
+
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 

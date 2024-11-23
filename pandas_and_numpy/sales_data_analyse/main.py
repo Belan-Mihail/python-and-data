@@ -108,7 +108,12 @@ print(f"Best month is {best_month}")
 # print("Companies ending with d", companies_endig_with_d)
 
 # 15 find all companies contain "so"
-companies_contain_soft = df[df['Company'].str.contains('so')]
-print("so companis: ", companies_contain_soft)
+# companies_contain_soft = df[df['Company'].str.contains('so')]
+# print("so companis: ", companies_contain_soft)
 
+# 16 find all companis with long name
+companies_with_long_name = df[df['Company'].str.len() > 30]
+print("Long name companies", companies_with_long_name)
+
+# all companies from region Qatar
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 

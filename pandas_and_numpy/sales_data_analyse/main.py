@@ -104,7 +104,11 @@ print(f"Best month is {best_month}")
 # print("Companies starting with A", companies_starting_with_a)
 
 # 14 find all companies starting with "d"
-companies_endig_with_d = df[df['Company'].str.endswith('d')]
-print("Companies ending with d", companies_endig_with_d)
+# companies_endig_with_d = df[df['Company'].str.endswith('d')]
+# print("Companies ending with d", companies_endig_with_d)
+
+# 15 find all companies contain "so"
+companies_contain_soft = df[df['Company'].str.contains('so')]
+print("so companis: ", companies_contain_soft)
 
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 

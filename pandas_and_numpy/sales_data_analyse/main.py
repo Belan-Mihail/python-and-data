@@ -119,7 +119,9 @@ df.groupby('Region'):
 # companies_with_a = df[df["Company"].str.lower().str.startswith('a')]
 # print('Companies starting with a', companies_with_a)
 
-# 18 
+# 18 find all companies starting with L and ending with d
+compines_starting_with_l_and_ending_with_d = df[(df['Company'].str.startswith('L')) & (df['Company'].str.endswith('d'))]
+print("Companies: ", compines_starting_with_l_and_ending_with_d)
 
 
 # all companies from region Qatar

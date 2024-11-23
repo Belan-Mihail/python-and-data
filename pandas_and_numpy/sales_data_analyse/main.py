@@ -95,4 +95,8 @@ print(f"Best month is {best_month}")
 # 11 check df info
 # print(df.info())
 
+# 12 find strokes where sales > 1000
+df_high_sales = df[df['Sales'] > 90000]
+print("Hight sales are: ", df_high_sales)
+
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 

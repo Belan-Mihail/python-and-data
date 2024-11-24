@@ -177,8 +177,11 @@ df_five = df[df['Company'].isin(five_companies)]
 
 #  27 sales_by_region_company df_five
 sales_by_region_company = df_five.groupby(['Company', 'Region'])['Sales'].sum().unstack()
-print(sales_by_region_company)
-print("-" * 20)
+# print(sales_by_region_company)
+# print("-" * 20)
 sales_by_region_company = sales_by_region_company.fillna(0)
 print(sales_by_region_company)
+
+sns.heatmap(sales_by_region_company, annot=True, fmt='.2f')
+plt.show()
 

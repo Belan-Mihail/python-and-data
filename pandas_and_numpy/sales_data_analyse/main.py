@@ -158,8 +158,15 @@ df.groupby('Region'):
 # 24 search for sales of 5 specific companies
 five_companies = ['Parturient Consulting', 'Dolor Sit Institute', 'Leo Cras LLC', 'Nam Consequat Dolor Inc.', 'Montes Institute']
 df_five = df[df['Company'].isin(five_companies)]
-print(df_five[['Company', 'Sales']])
+# print(df_five[['Company', 'Sales']])
 
+# группы_по_компаниям = df_фильтр.groupby('Company')['Sales'].agg(['sum', 'mean', 'max'])
+# print(группы_по_компаниям)
+
+sns.barplot(x='Company', y='Sales', data=df_five)
+plt.show()
+sns.boxplot(x='Company', y='Sales', data=df_five)
+plt.show()
 
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. мне нужны задания средней сложности с данными которые содержаться в этом файле по пайтон пандас и матлиб для тренировки с решением, чтоб я мог свериться   

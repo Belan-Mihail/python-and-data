@@ -124,11 +124,14 @@ df.groupby('Region'):
 # print("Companies: ", compines_starting_with_l_and_ending_with_d)
 
 # 19 all companies from Qatar
-companies_from_qatar = df[df['Region'] == 'Qatar']
-qatar_companies_list = companies_from_qatar['Company'].to_list()
-print(companies_from_qatar)
-print(qatar_companies_list)
+# companies_from_qatar = df[df['Region'] == 'Qatar']
+# qatar_companies_list = companies_from_qatar['Company'].to_list()
+# print(companies_from_qatar)
+# print(qatar_companies_list)
 
-
+# 20 unique companies and region
+print(df['Company'].unique)
+print(df['Region'].unique)
 
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 
+# у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. мне нужны задания средней сложности с данными которые содержаться в этом файле по пайтон пандас и матлиб для тренировки с решением, чтоб я мог свериться   

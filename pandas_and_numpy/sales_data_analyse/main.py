@@ -133,13 +133,20 @@ df.groupby('Region'):
 # print(df['Company'].unique)
 # print(df['Region'].unique)
 
+# 21 sales report
+# plt.hist(df['Sales'], bins=20)
+# plt.xlabel('Sales')
+# plt.ylabel('Count')
+# plt.title('Sales report')
+# plt.show()
 
-plt.hist(df['Sales'], bins=20)
-plt.xlabel('Sales')
-plt.ylabel('Count')
-plt.title('Sales report')
+
+# 22 Scatterplot
+plt.scatter(df['Date'], df['Sales'])
+plt.xlabel('Date')
+plt.ylabel('Sales')
+plt.title('Sales Dependence on Date')
 plt.show()
-
 
 
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 

@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 # 1 loading data from csv
@@ -142,11 +143,17 @@ df.groupby('Region'):
 
 
 # 22 Scatterplot
-plt.scatter(df['Date'], df['Sales'])
-plt.xlabel('Date')
-plt.ylabel('Sales')
-plt.title('Sales Dependence on Date')
-plt.show()
+# plt.scatter(df['Date'], df['Sales'])
+# plt.xlabel('Date')
+# plt.ylabel('Sales')
+# plt.title('Sales Dependence on Date')
+# plt.show()
+
+# 23 Boxplot by region first 5
+# df_5_rows = df.head(5)
+# sns.boxplot(x='Region', y='Sales', data=df_5_rows)
+# plt.title('Comparison of sales by region (first 5)')
+# plt.show()
 
 
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 

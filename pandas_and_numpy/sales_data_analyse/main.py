@@ -130,8 +130,18 @@ df.groupby('Region'):
 # print(qatar_companies_list)
 
 # 20 unique companies and region
-print(df['Company'].unique)
-print(df['Region'].unique)
+# print(df['Company'].unique)
+# print(df['Region'].unique)
+
+
+plt.hist(df['Sales'], bins=20)
+plt.xlabel('Sales')
+plt.ylabel('Count')
+plt.title('Sales report')
+plt.show()
+
+
 
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. 
 # у меня есть сsv файл с такими колонками (Name,Region,Company,Date,Sales) со 100 строками данных. мне нужны задания средней сложности с данными которые содержаться в этом файле по пайтон пандас и матлиб для тренировки с решением, чтоб я мог свериться   
+

@@ -26,3 +26,8 @@ print("-" * 20)
 array_with_step_2 = np.arange(5,16,2)
 print(array_with_step_2)
 print("-" * 20)
+
+# 4. Extract the first 5 elements
+first_five_el = array_from_5_to_15[:5]
+print(first_five_el)
+print("-" * 20)

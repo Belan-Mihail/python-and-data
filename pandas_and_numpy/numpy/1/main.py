@@ -1,6 +1,13 @@
 import numpy as np
 
-
+# 7 (7.1) Extract elements from array with step 2
+new_array = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+second_row = new_array[1, :]
+print("N7.1 second row\n", second_row)
+print("-" * 20)
+third_column = new_array[:, 2]
+print("N7 third column\n", third_column)
+print("-" * 20)
 
 # 6 Extract elements from array with step 2
 array_from_5_to_20 = np.arange(5,21)

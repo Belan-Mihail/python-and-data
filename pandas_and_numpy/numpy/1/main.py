@@ -2,6 +2,9 @@ import numpy as np
 
 # 7 (7.1) Extract elements from array with step 2
 new_array = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+sub_array = new_array[1:3, 1:3]
+print("N7.2 sub_array\n", sub_array)
+print("-" * 20)
 second_row = new_array[1, :]
 print("N7.1 second row\n", second_row)
 print("-" * 20)

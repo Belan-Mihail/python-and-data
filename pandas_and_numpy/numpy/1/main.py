@@ -21,3 +21,8 @@ print("-" * 20)
 array_from_5_to_15 = np.arange(5,16)
 print(array_from_5_to_15)
 print("-" * 20)
+
+# 3.1 Create an array with step 2.
+array_with_step_2 = np.arange(5,16,2)
+print(array_with_step_2)
+print("-" * 20)

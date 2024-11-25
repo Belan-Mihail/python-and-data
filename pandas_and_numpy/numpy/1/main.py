@@ -1,8 +1,21 @@
 import numpy as np
 
+# 
+print("-" * 20)
+
+# 6 Extract elements from array with step 2
+array_from_5_to_20 = np.arange(5,21)
+arr_elements_step_2 = array_from_5_to_20[::2]
+print("N6 ", arr_elements_step_2)
+print("-" * 20)
+
+# 5 Extract from 2 to 4 elements
+el_from_2_to_4 = array_from_5_to_20[1:4]
+print(el_from_2_to_4)
+print("-" * 20)
+
 
 # 4. Extract the first 5 elements
-array_from_5_to_20 = np.arange(5,21)
 first_five_el = array_from_5_to_20[:5]
 print(first_five_el)
 print("-" * 20)

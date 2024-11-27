@@ -13,10 +13,10 @@ df['Date'] = pd.to_datetime(df['Date'])
 # print(df)
 
 # 3 Which regions showed the highest sales volume over the entire period?
-# total_sales_by_region = df.groupby('Region')['Sales'].sum()
-# print(f"Analyse by region and sales summ:\n", total_sales_by_region)
-# total_sales_by_region = total_sales_by_region.sort_values(ascending=False)
-# print(f"Sorting by values:\n", total_sales_by_region)
+total_sales_by_region = df.groupby('Region')['Sales'].sum()
+print(f"Analyse by region and sales summ:\n", total_sales_by_region)
+total_sales_by_region = total_sales_by_region.sort_values(ascending=False)
+print(f"Sorting by values:\n", total_sales_by_region)
 
 # 3.1 total_sales_by_region = df.groupby('Region')['Sales'].sum()
 """

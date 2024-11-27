@@ -1,5 +1,11 @@
 import numpy as np
 
+# 8 Change all items in the third column to 10
+new_array1 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+new_array1[:, 2] = 10
+print("N8 new_array1\n", new_array1)
+print("-" * 20)
+
 # 7 (7.1) Extract elements from array with step 2
 new_array = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 sub_array = new_array[1:3, 1:3]

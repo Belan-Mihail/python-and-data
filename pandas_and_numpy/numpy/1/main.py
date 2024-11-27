@@ -1,5 +1,12 @@
 import numpy as np
 
+
+# 9 Adding two NumPy arrays of the same size
+array1 = np.array([[1,2,3], [4,5,6]])
+array2 = np.array([[7,8,9], [10,11,12]])
+result = array1 + array2
+print("N9 result\n", result)
+
 # 8 Change all items in the third column to 10. 8.1 Changing multiple columns. 8.2 Changing elements by condition
 # 8.3 Modifying Elements with Functions
 new_array1 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])

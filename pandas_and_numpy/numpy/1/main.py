@@ -1,10 +1,14 @@
 import numpy as np
 
 
-# 10. Multiply each element of the array by 2.
+# 10. Multiply each element of the array by 2. 10.1 Example with more complex arrays
 arr1 = np.array([[1,2,3], [4,5,6]])
 res = arr1 * 2
-print("N1 res\n", res)
+print("N10 res\n", res)
+arr2 = np.random.rand(3,4)
+print("N10.1 arr2\n", arr2)
+arr2 *= arr2 > 0.5
+print("N10.1 arr2\n", arr2)
 
 # 9 Adding two NumPy arrays of the same size. 9.1. Example with more complex arrays
 array1 = np.array([[1,2,3], [4,5,6]])

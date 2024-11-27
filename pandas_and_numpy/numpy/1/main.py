@@ -2,13 +2,21 @@ import numpy as np
 
 
 # 11 Calculate the average value of the array elements. 
-# 11.1 Calculate the average value of the elements of the first axis of a two-dimensional array.
+# 11.1 Calculate the average value of the elements of the axis 1 of a two-dimensional array.
+# 11.2 Calculate the average value of the elements of the axis 0 of a two-dimensional array.
 ARR = np.array([1,2,3,4,5])
 mean_value = np.mean(ARR)
 print("N11 mean_value\n", mean_value)
+print("-" * 20)
 ARR1 = np.array([[1,2,3], [4,5,6]])
 mean_value = np.mean(ARR1, axis=1)
 print("N11.1 mean_value\n", mean_value)
+print("-" * 20)
+ARR2 = np.random.rand(3,4)
+print("N11.2 ARR2\n", ARR2)
+mean_value_each_column = np.mean(ARR2, axis=0)
+print("N11.2 mean_value_each_column\n", mean_value_each_column)
+print("-" * 20)
 
 # 10. Multiply each element of the array by 2. 10.1 Example with more complex arrays
 arr1 = np.array([[1,2,3], [4,5,6]])

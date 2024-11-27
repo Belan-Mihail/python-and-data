@@ -1,6 +1,12 @@
 import numpy as np
 
 
+# 11 Calculate the average value of the array elements.
+ARR = np.array([1,2,3,4,5])
+mean_value = np.mean(ARR)
+print("N11 mean_value\n", mean_value)
+
+
 # 10. Multiply each element of the array by 2. 10.1 Example with more complex arrays
 arr1 = np.array([[1,2,3], [4,5,6]])
 res = arr1 * 2

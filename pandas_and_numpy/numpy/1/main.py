@@ -1,11 +1,17 @@
 import numpy as np
 
 
-# 9 Adding two NumPy arrays of the same size
+# 9 Adding two NumPy arrays of the same size. 9.1. Example with more complex arrays
 array1 = np.array([[1,2,3], [4,5,6]])
 array2 = np.array([[7,8,9], [10,11,12]])
 result = array1 + array2
 print("N9 result\n", result)
+array3 = np.arange(12).reshape(3,4)
+array4 = np.random.rand(3,4)
+print("N9.1 array3\n", array3)
+print("N9.1 array4\n", array4)
+result = array3 + array4
+print("N9.1 result\n", result)
 
 # 8 Change all items in the third column to 10. 8.1 Changing multiple columns. 8.2 Changing elements by condition
 # 8.3 Modifying Elements with Functions

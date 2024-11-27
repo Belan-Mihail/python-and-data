@@ -1,12 +1,15 @@
 import numpy as np
 
-# 8 Change all items in the third column to 10. 8.1 Changing multiple columns
+# 8 Change all items in the third column to 10. 8.1 Changing multiple columns. 8.2 Changing elements by condition
 new_array1 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 new_array1[:, 2] = 10
 print("N8 new_array1\n", new_array1)
 print("-" * 20)
 new_array1[:, 1:3] = 11
 print("N8.1 new_array1\n", new_array1)
+print("-" * 20)
+new_array1[new_array1 < 5 ] = 8
+print("N8.2 new_array1\n", new_array1)
 print("-" * 20)
 
 

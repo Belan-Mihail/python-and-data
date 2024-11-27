@@ -1,6 +1,11 @@
 import numpy as np
 
 
+# 10. Multiply each element of the array by 2.
+arr1 = np.array([[1,2,3], [4,5,6]])
+res = arr1 * 2
+print("N1 res\n", res)
+
 # 9 Adding two NumPy arrays of the same size. 9.1. Example with more complex arrays
 array1 = np.array([[1,2,3], [4,5,6]])
 array2 = np.array([[7,8,9], [10,11,12]])

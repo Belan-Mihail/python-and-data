@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # 1 Loading data from Cars.csv
 df = pd.read_csv('Cars.csv')
@@ -16,3 +18,8 @@ print("-" *20)
 
 # 4 сheck for missing values 
 print("missing values summ: \n", df.isnull().sum())
+
+# 5 create correlation matrix
+corr_matrix = df.corr()
+sns.heatmap(corr_matrix, annot=True)
+plt.show()

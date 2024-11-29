@@ -20,6 +20,7 @@ print("-" *20)
 print("missing values summ: \n", df.isnull().sum())
 
 # 5 create correlation matrix
+df = df.drop('Unnamed: 0', axis=1)
 corr_matrix = df.corr()
 sns.heatmap(corr_matrix, annot=True)
 plt.show()

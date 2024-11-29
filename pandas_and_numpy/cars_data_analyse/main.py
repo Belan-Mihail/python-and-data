@@ -18,6 +18,7 @@ print("-" *20)
 
 # 4 сheck for missing values 
 print("missing values summ: \n", df.isnull().sum())
+print("-" *20)
 
 # 5 create correlation matrix
 # df = df.drop('Unnamed: 0', axis=1)
@@ -27,5 +28,10 @@ print("missing values summ: \n", df.isnull().sum())
 
 
 # 6 relationship between two variables ("mpg" and "wt")
-sns.scatterplot(x='wt', y='mpg', data=df)
-plt.show()
+# sns.scatterplot(x='wt', y='mpg', data=df)
+# plt.show()
+
+# 7 cars by number of cylinders and calculate average fuel consumption
+cars_by_number_of_cyl_and_avar_fuel = df.groupby('cyl')['mpg'].mean()
+print("cars by number of cylinders and calculate average fuel consumption \n", cars_by_number_of_cyl_and_avar_fuel)
+print("-" *20)

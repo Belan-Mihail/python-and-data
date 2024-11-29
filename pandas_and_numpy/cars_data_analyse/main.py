@@ -37,5 +37,9 @@ print("cars by number of cylinders and calculate average fuel consumption \n", c
 print("-" *20)
 
 #8 horsepower distribution histogram
-sns.histplot(data=df, x='hp')
-plt.show()
+# sns.histplot(data=df, x='hp')
+# plt.show()
+
+#9 Filter cars with automatic transmission and calculate average acceleration
+automatic_transmission_and_average_acceleration = df[df['am'] == 1]['qsec'].mean()
+print('Filter cars with automatic transmission and calculate average acceleration \n', automatic_transmission_and_average_acceleration)

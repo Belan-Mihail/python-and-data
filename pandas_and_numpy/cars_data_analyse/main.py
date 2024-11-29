@@ -35,3 +35,7 @@ print("-" *20)
 cars_by_number_of_cyl_and_avar_fuel = df.groupby('cyl')['mpg'].mean()
 print("cars by number of cylinders and calculate average fuel consumption \n", cars_by_number_of_cyl_and_avar_fuel)
 print("-" *20)
+
+#8 horsepower distribution histogram
+sns.histplot(data=df, x='hp')
+plt.show()

@@ -1,8 +1,7 @@
 import pandas as pd
 
-
-
-
 # 1 Loading data from Cars.csv
 df = pd.read_csv('Cars.csv')
-print(df)
+
+# Show first 5 Line of df
+print(df.head())

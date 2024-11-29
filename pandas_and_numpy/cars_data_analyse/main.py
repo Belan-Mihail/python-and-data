@@ -13,3 +13,6 @@ print('df info \n', df.info)
 print("-" *20)
 print('df describe \n', df.describe)
 print("-" *20)
+
+# 4 сheck for missing values 
+print("missing values summ: \n", df.isnull().sum())

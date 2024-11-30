@@ -69,3 +69,8 @@ print("-" *20)
 hp4 = round(df[df['cyl'] == 4]['hp'].mean(), 2)
 print("average power of 4 cylinder cars \n", hp4)
 print("-" *20)
+
+# 15 percentage of cars have automatic transmission
+auto_trans = round((df['am'] == 1).mean() * 100)
+print("percentage of cars have automatic transmission \n", str(auto_trans) + "%")
+print("-" *20)

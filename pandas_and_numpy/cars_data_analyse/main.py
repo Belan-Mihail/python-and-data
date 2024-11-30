@@ -52,5 +52,10 @@ print("-" *20)
 
 
 # 11 fuel consumption comparison chart
-sns.boxplot(x='cyl', y='mpg', data=df)
-plt.show()
+# sns.boxplot(x='cyl', y='mpg', data=df)
+# plt.show()
+
+# 12 average power of 8 cylinder cars
+hp8 = round(df[df['cyl'] == 8]['hp'].mean(), 2)
+print("average power of 8 cylinder cars \n", hp8)
+print("-" *20)

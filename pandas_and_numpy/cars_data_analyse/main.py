@@ -64,3 +64,8 @@ print("-" *20)
 hp6 = round(df[df['cyl'] == 6]['hp'].mean(), 2)
 print("average power of 6 cylinder cars \n", hp6)
 print("-" *20)
+
+# 14 average power of 4 cylinder cars
+hp4 = round(df[df['cyl'] == 4]['hp'].mean(), 2)
+print("average power of 4 cylinder cars \n", hp4)
+print("-" *20)

@@ -74,3 +74,8 @@ print("-" *20)
 auto_trans = round((df['am'] == 1).mean() * 100)
 print("percentage of cars have automatic transmission \n", str(auto_trans) + "%")
 print("-" *20)
+
+# 16 median weight of cars with manual transmission
+med_weight_manual_trans = round(df[df['am'] == 0]['wt'].median())
+print("median weight of cars with manual transmission \n", med_weight_manual_trans )
+print("-" *20)

@@ -49,3 +49,8 @@ print("-" *20)
 df['economy'] = df['mpg'].apply(lambda x: "economic" if x > 20 else 'not economical')
 print("new df \n", df.head())
 print("-" *20)
+
+
+# 11 fuel consumption comparison chart
+sns.boxplot(x='cyl', y='mpg', data=df)
+plt.show()

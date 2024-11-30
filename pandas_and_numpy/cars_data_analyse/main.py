@@ -43,3 +43,9 @@ print("-" *20)
 #9 Filter cars with automatic transmission and calculate average acceleration
 automatic_transmission_and_average_acceleration = df[df['am'] == 1]['qsec'].mean()
 print('Filter cars with automatic transmission and calculate average acceleration \n', automatic_transmission_and_average_acceleration)
+print("-" *20)
+
+#10 "economical" and "non-economical" based on fuel consumption
+df['economy'] = df['mpg'].apply(lambda x: "economic" if x > 20 else 'not economical')
+print("new df \n", df.head())
+print("-" *20)

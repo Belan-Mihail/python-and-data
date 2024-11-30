@@ -79,3 +79,7 @@ print("-" *20)
 med_weight_manual_trans = round(df[df['am'] == 0]['wt'].median())
 print("median weight of cars with manual transmission \n", med_weight_manual_trans )
 print("-" *20)
+
+# 16  distribution of acceleration time (qsec) by categories "economy" and "not economic"
+sns.boxplot(x='economy', y='qsec', data=df)
+plt.show()

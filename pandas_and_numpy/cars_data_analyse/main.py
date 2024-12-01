@@ -32,7 +32,7 @@ with PdfPages('cars_analyse.pdf') as pdf:
     plt.close()  # Close the plot window to avoid clutter
 
     # 7 Cars by number of cylinders and average fuel consumption
-    cars_by_number_of_cyl_and_avar_fuel = df.groupby('cyl')['mpg'].mean()
+    cars_by_number_of_cyl_and_avar_fuel = round(df.groupby('cyl')['mpg'].mean(), 2)
     fig, ax = plt.subplots()
     ax.axis('off')
     ax.table(cellText=cars_by_number_of_cyl_and_avar_fuel.reset_index().values, colLabels=['Cylinders', 'Avg MPG'], loc='center')

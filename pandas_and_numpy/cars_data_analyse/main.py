@@ -94,3 +94,8 @@ print("-" *20)
 max_accel_car = df[df['qsec'] == df['qsec'].min()]
 print(" car with maximum acceleration \n", max_accel_car)
 print("-" *20)
+
+# 19 car with maximum acceleration
+min_accel_car = df[df['qsec'] == df['qsec'].max()]
+print(" car with minimum acceleration \n", min_accel_car)
+print("-" *20)

@@ -14,7 +14,10 @@ with PdfPages('cars_analyse.pdf') as pdf:
     # print("-" *20)
     fig, ax = plt.subplots()
     ax.axis('off')
-    ax.table(cellText=df.head().values, colLabels=df.columns, loc='center')
+    table = ax.table(cellText=df.head().values, colLabels=df.columns, loc='center')
+    table.auto_set_font_size(False)
+    table.set_fontsize(5)
+
     pdf.savefig()
     plt.close(fig)
 

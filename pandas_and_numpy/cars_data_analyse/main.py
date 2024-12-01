@@ -5,14 +5,18 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 # 1 Loading data from Cars.csv
 df = pd.read_csv('Cars.csv')
-print("-" *20)
+
 
 with PdfPages('cars_analyse.pdf') as pdf:
 
     # 2 Show first 5 Line of df
     # print('df head \n', df.head())
-    # # print("-" *20)
-    # pdf.savefig()
+    # print("-" *20)
+    fig, ax = plt.subplots()
+    ax.axis('off')
+    ax.table(cellText=df.head().values, colLabels=df.columns, loc='center')
+    pdf.savefig()
+    plt.close(fig)
 
     # 6 Relationship between "mpg" and "wt"
     fig, ax = plt.subplots()

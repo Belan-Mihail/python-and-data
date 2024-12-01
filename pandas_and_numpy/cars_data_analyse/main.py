@@ -32,10 +32,13 @@ with PdfPages('cars_analyse.pdf') as pdf:
     plt.close()  # Close the plot window to avoid clutter
 
     # 7 Cars by number of cylinders and average fuel consumption
-    # cars_by_number_of_cyl_and_avar_fuel = df.groupby('cyl')['mpg'].mean()
-    # # print("-" * 20)
-    # # print("cars by number of cylinders and calculate average fuel consumption \n", cars_by_number_of_cyl_and_avar_fuel)
-    # pdf.savefig()  # Save the average fuel consumption table to the PDF
+    cars_by_number_of_cyl_and_avar_fuel = df.groupby('cyl')['mpg'].mean()
+    fig, ax = plt.subplots()
+    ax.axis('off')
+    ax.table(cellText=cars_by_number_of_cyl_and_avar_fuel.reset_index().values, colLabels=['Cylinders', 'Avg MPG'], loc='center')
+    # print("-" * 20)
+    # print("cars by number of cylinders and calculate average fuel consumption \n", cars_by_number_of_cyl_and_avar_fuel)
+    pdf.savefig()  # Save the average fuel consumption table to the PDF
 
     # # 11 Fuel consumption comparison chart
     # sns.boxplot(x='cyl', y='mpg', data=df)

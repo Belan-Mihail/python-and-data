@@ -105,5 +105,9 @@ print("-" *20)
 # plt.show()
 
 #21 relationship between the weight of a car and its power
-sns.scatterplot(data=df, x='wt', y='hp', hue='am')
+# sns.scatterplot(data=df, x='wt', y='hp', hue='am')
+# plt.show()
+
+# 22 paired graphs for all numerical variables
+sns.pairplot(df, hue='am')
 plt.show()

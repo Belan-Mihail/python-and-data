@@ -10,11 +10,12 @@ print("-" *20)
 with PdfPages('cars_analyse.pdf') as pdf:
 
     # 2 Show first 5 Line of df
-    print('df head \n', df.head())
-    print("-" *20)
-    pdf.savefig()
+    # print('df head \n', df.head())
+    # # print("-" *20)
+    # pdf.savefig()
 
     # 6 Relationship between "mpg" and "wt"
+    fig, ax = plt.subplots()
     sns.scatterplot(x='wt', y='mpg', data=df)
     plt.title('Relationship Between Weight (wt) and Fuel Efficiency (mpg)')
     plt.xlabel('Weight (wt)')
@@ -24,19 +25,19 @@ with PdfPages('cars_analyse.pdf') as pdf:
     plt.close()  # Close the plot window to avoid clutter
 
     # 7 Cars by number of cylinders and average fuel consumption
-    cars_by_number_of_cyl_and_avar_fuel = df.groupby('cyl')['mpg'].mean()
-    print("-" * 20)
-    print("cars by number of cylinders and calculate average fuel consumption \n", cars_by_number_of_cyl_and_avar_fuel)
-    pdf.savefig()  # Save the average fuel consumption table to the PDF
+    # cars_by_number_of_cyl_and_avar_fuel = df.groupby('cyl')['mpg'].mean()
+    # # print("-" * 20)
+    # # print("cars by number of cylinders and calculate average fuel consumption \n", cars_by_number_of_cyl_and_avar_fuel)
+    # pdf.savefig()  # Save the average fuel consumption table to the PDF
 
-    # 11 Fuel consumption comparison chart
-    sns.boxplot(x='cyl', y='mpg', data=df)
-    plt.title('Fuel Efficiency (mpg) by Number of Cylinders (cyl)')
-    plt.xlabel('Number of Cylinders (cyl)')
-    plt.ylabel('Fuel Efficiency (mpg)')
-    plt.tight_layout()
-    pdf.savefig()  # Save the fuel consumption boxplot to the PDF
-    plt.close()
+    # # 11 Fuel consumption comparison chart
+    # sns.boxplot(x='cyl', y='mpg', data=df)
+    # plt.title('Fuel Efficiency (mpg) by Number of Cylinders (cyl)')
+    # plt.xlabel('Number of Cylinders (cyl)')
+    # plt.ylabel('Fuel Efficiency (mpg)')
+    # plt.tight_layout()
+    # pdf.savefig()  # Save the fuel consumption boxplot to the PDF
+    # plt.close()
 
 # # 3 print df info and description
 # print('df info \n', df.info)

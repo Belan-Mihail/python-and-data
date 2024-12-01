@@ -99,3 +99,7 @@ print("-" *20)
 min_accel_car = df[df['qsec'] == df['qsec'].max()]
 print(" car with minimum acceleration \n", min_accel_car)
 print("-" *20)
+
+# 20 histogram of the distribution of the number of cylinders.
+sns.histplot(data=df, x='cyl')
+plt.show()

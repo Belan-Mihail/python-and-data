@@ -90,3 +90,7 @@ avar_wt = df.groupby('gear')['wt'].mean()
 print("Group the cars by the number of gears and calculate the average weight for each group \n", avar_wt)
 print("-" *20)
 
+# 18 car with maximum acceleration
+max_accel_car = df[df['qsec'] == df['qsec'].min()]
+print(" car with maximum acceleration \n", max_accel_car)
+print("-" *20)

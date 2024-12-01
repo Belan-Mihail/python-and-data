@@ -41,13 +41,14 @@ with PdfPages('cars_analyse.pdf') as pdf:
     pdf.savefig()  # Save the average fuel consumption table to the PDF
 
     # # 11 Fuel consumption comparison chart
-    # sns.boxplot(x='cyl', y='mpg', data=df)
-    # plt.title('Fuel Efficiency (mpg) by Number of Cylinders (cyl)')
-    # plt.xlabel('Number of Cylinders (cyl)')
-    # plt.ylabel('Fuel Efficiency (mpg)')
-    # plt.tight_layout()
-    # pdf.savefig()  # Save the fuel consumption boxplot to the PDF
-    # plt.close()
+    fig, ax = plt.subplots()
+    sns.boxplot(x='cyl', y='mpg', data=df)
+    plt.title('Fuel Efficiency (mpg) by Number of Cylinders (cyl)')
+    plt.xlabel('Number of Cylinders (cyl)')
+    plt.ylabel('Fuel Efficiency (mpg)')
+    plt.tight_layout()
+    pdf.savefig()  
+    plt.close()
 
 # # 3 print df info and description
 # print('df info \n', df.info)

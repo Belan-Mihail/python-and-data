@@ -22,14 +22,14 @@ for item_id in range (1, num_products + 1):
         sales_volume += seasonality + (holiday_influence * 100)
         marketing_spend = round(np.random.uniform(1000, 5000), 2)
     
-    data.append({
-        'item_id': item_id,
-        'month': month.strftime("%Y-%m"),
-        'sales_volume': max(0, round(sales_volume)),
-        'price': price,
-        'holiday_influence': holiday_influence,
-        'marketing_spend': marketing_spend
-    })
+        data.append({
+            'item_id': item_id,
+            'month': month.strftime("%Y-%m"),
+            'sales_volume': max(0, round(sales_volume)),
+            'price': price,
+            'holiday_influence': holiday_influence,
+            'marketing_spend': marketing_spend
+        })
 
 sales_data = pd.DataFrame(data)
 

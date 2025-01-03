@@ -18,9 +18,19 @@ print(df_sales.head())
 # Entering erroneous data with a different month format
 # 20% of months will be converted to the format "%d-%m-%Y"
 num_rows = len(df_sales)
-incorecct_format_ind_1 = random.sample(range(num_rows), int(num_rows * 0.2))
+incorect_format_ind_1 = random.sample(range(num_rows), int(num_rows * 0.2))
 
-for idx in incorecct_format_ind_1:
+for idx in incorect_format_ind_1:
     df_sales.loc[idx, 'month'] = pd.to_datetime(df_sales.loc[idx, 'month'], format='%Y-%m').strftime('%d-%m-%Y')
+
+# 10% of months will be converted to the format "%b %d, %Y"
+incorect_format_ind_2 = random.sample(range(num_rows), int(num_rows * 0.1))
+
+for idx in incorect_format_ind_2:
+    try:
+        df_sales.loc[idx, 'month'] = pd.to_datetime(df_sales.loc[idx, 'month'], format='%Y-%m').strftime('%b %d, %Y')
+    except ValueError:
+        # If the format does not match, you can skip or handle the error
+        pass
 
 print(df_sales.head())

@@ -8,12 +8,8 @@ df_sales = pd.read_csv('sales_data.csv')
 # Shuffle the lines randomly so that the data is not in order
 df_sales = df_sales.sample(frac=1, random_state=42)
 
-# print(df_sales.head())
-
-
 # Mix up the months for each product
 df_sales['month'] = df_sales.groupby('item_id')['month'].transform(np.random.permutation)
-print(df_sales.head())
 
 # Entering erroneous data with a different month format
 # 20% of months will be converted to the format "%d-%m-%Y"
@@ -32,8 +28,6 @@ for idx in incorect_format_ind_2:
     except ValueError:
         # If the format does not match, you can skip or handle the error
         pass
-
-print(df_sales.head())
 
 
 # Functions for "artificial corruption" of data
@@ -65,6 +59,8 @@ def add_noise_marketing_spend(spend):
     else:
         return spend 
 
+df_sales['original_price'] = df_sales['price']
+
 # Applying distortions to data
 df_sales['sales_volume'] = df_sales['sales_volume'].apply(add_noise_sales_volume)
 df_sales['price'] = df_sales['price'].apply(add_noise_price)
@@ -76,4 +72,12 @@ df_sales['sales_volume_noise'] = df_sales['sales_volume'] / df_sales['sales_volu
 df_sales['price_noise'] = df_sales['price'] / df_sales['sales_volume'].apply(lambda x: add_noise_price(x))
 df_sales['holiday_influence_noise'] = df_sales['holiday_influence'] != df_sales['holiday_influence'].apply(lambda x: add_noise_holiday_influence(x))
 
-# print(df_sales.head(10))
+# edit format 30 % prices
+
+np.random.seed(42)
+indx_to_change = np.random.choice(df_sales.index, size=int(0.3 * len(df_sales)), replace=False)
+
+# Change these values ​​to strings with the addition of the '$' symbol
+df_sales.loc[indx_to_change, 'price'] = df_sales.loc[indx_to_change, 'price'].apply(lambda x: f"${x:.2f}")
+
+print(df_sales.head(20))

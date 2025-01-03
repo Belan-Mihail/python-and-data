@@ -51,3 +51,8 @@ def add_noise_holiday_influence(holiday_influence):
     if np.random.rand() < 0.1: # 10% chance to change value
         return 1 - holiday_influence # if it was 0, it will become 1 and vice versa
     return holiday_influence
+
+# Applying distortions to data
+df_sales['sales_volume'] = df_sales['sales_volume'].apply(add_noise_sales_volume)
+df_sales['price'] = df_sales['price'].apply(add_noise_price)
+df_sales['holoday_influence'] = df_sales['holoday_influence'].apply(add_noise_holiday_influence)

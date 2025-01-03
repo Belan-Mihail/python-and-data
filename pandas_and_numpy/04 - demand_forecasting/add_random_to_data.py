@@ -55,8 +55,9 @@ def add_noise_holiday_influence(holiday_influence):
 # Applying distortions to data
 df_sales['sales_volume'] = df_sales['sales_volume'].apply(add_noise_sales_volume)
 df_sales['price'] = df_sales['price'].apply(add_noise_price)
-df_sales['holoday_influence'] = df_sales['holoday_influence'].apply(add_noise_holiday_influence)
+df_sales['holiday_influence'] = df_sales['holiday_influence'].apply(add_noise_holiday_influence)
 
 # # To restore, we will add information about where and how the changes were made
 df_sales['sales_volume_noise'] = df_sales['sales_volume'] / df_sales['sales_volume'].apply(lambda x: add_noise_sales_volume(x))
 df_sales['price_noise'] = df_sales['price'] / df_sales['sales_volume'].apply(lambda x: add_noise_price(x))
+df_sales['holiday_influence_noise'] = df_sales['holiday_influence'] / df_sales['holiday_influence'].apply(lambda x: add_noise_holiday_influence(x))

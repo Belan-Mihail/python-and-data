@@ -16,7 +16,7 @@ for item_id in range (1, num_products + 1):
     for month in data_range:
         # Generating random data: sales, price, and holiday/promotion influence
         sales_volume = np.random.randint(50, 500) # random sales volume
-        price = round(np.random.uniform(10, 10), 2) # random price
+        price = round(np.random.uniform(10, 20), 2) # random price
         holiday_influence = np.random.choice([0, 1], p=[0.7, 0.3])
         seasonality = np.sin(month.month * (np.pi / 6)) * 200
         sales_volume += seasonality + (holiday_influence * 100)

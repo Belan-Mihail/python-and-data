@@ -34,3 +34,10 @@ for idx in incorect_format_ind_2:
         pass
 
 print(df_sales.head())
+
+
+# Functions for "artificial corruption" of data
+def add_noise_sales_volume(sales_volume):
+    # add noise in range ±20%
+    noise = np.random.uniform(-0.2, 0.2)
+    return max(0, round(sales_volume * (1 + noise)))

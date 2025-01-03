@@ -52,6 +52,19 @@ def add_noise_holiday_influence(holiday_influence):
         return 1 - holiday_influence # if it was 0, it will become 1 and vice versa
     return holiday_influence
 
+def add_noise_marketing_spend(spend):
+    # With a probability of 20%, we replace the values ​​with empty, dash or "minimum"
+    rand_value = np.random.rand()
+
+    if rand_value < 0.07:
+        return np.nan
+    elif rand_value < 0.14:
+        return '-'
+    elif rand_value < 0.21:
+        return 'minimum'
+    else:
+        return spend 
+
 # Applying distortions to data
 df_sales['sales_volume'] = df_sales['sales_volume'].apply(add_noise_sales_volume)
 df_sales['price'] = df_sales['price'].apply(add_noise_price)
@@ -62,4 +75,3 @@ df_sales['sales_volume_noise'] = df_sales['sales_volume'] / df_sales['sales_volu
 df_sales['price_noise'] = df_sales['price'] / df_sales['sales_volume'].apply(lambda x: add_noise_price(x))
 df_sales['holiday_influence_noise'] = df_sales['holiday_influence'] != df_sales['holiday_influence'].apply(lambda x: add_noise_holiday_influence(x))
 
-print(df_sales.head(10))

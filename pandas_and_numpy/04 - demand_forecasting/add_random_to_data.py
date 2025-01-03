@@ -80,4 +80,4 @@ indx_to_change = np.random.choice(df_sales.index, size=int(0.3 * len(df_sales)),
 # Change these values ​​to strings with the addition of the '$' symbol
 df_sales.loc[indx_to_change, 'price'] = df_sales.loc[indx_to_change, 'price'].apply(lambda x: f"${x:.2f}")
 
-print(df_sales.head(20))
+df_sales.to_csv('sales_data_with_noise.csv', index=False)

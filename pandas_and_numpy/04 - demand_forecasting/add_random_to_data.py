@@ -45,3 +45,9 @@ def add_noise_sales_volume(sales_volume):
 def add_noise_price(price):
     noise = np.random.uniform(-0.05, 0.05)
     return round(price * (1 + noise), 2)
+
+def add_noise_holiday_influence(holiday_influence):
+    # Change holiday_influence with random probability (0 to 1 and vice versa)
+    if np.random.rand() < 0.1: # 10% chance to change value
+        return 1 - holiday_influence # if it was 0, it will become 1 and vice versa
+    return holiday_influence

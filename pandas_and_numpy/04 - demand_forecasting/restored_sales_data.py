@@ -39,3 +39,6 @@ def restore_price_column(price, price_noise):
     
     # Restore the price by dividing by the noise factor
     return round(price / price_noise, 2)
+
+df_sales['price'] = df_sales.apply(lambda row: restore_price_column(row['price'], row['price_noise']), axis=1)
+print(df_sales.head(10))

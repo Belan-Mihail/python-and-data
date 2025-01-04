@@ -38,7 +38,20 @@ def add_noise_sales_volume(sales_volume):
 
 def add_noise_price(price):
     noise = np.random.uniform(-0.05, 0.05)
-    return round(price * (1 + noise), 2)
+    noisy_price = round(price * (1 + noise), 2)
+    return noisy_price, noise
+
+# Add noise to 30% of prices in the dataframe
+np.random.seed(42)
+indx_to_change = np.random.choice(df_sales.index, size=int(0.3 * len(df_sales)), replace=False)
+
+# Add noise to prices and save it in a new column
+df_sales['price_noise'] = np.nan  # Create a column to store noise
+for idx in indx_to_change:
+    price = df_sales.at[idx, 'price']
+    noisy_price, noise = add_noise_price(price)
+    df_sales.at[idx, 'price'] = noisy_price
+    df_sales.at[idx, 'price_noise'] = noise  # Keep the noise for a specific price
 
 def add_noise_holiday_influence(holiday_influence):
     # Change holiday_influence with random probability (0 to 1 and vice versa)
@@ -63,13 +76,13 @@ df_sales['original_price'] = df_sales['price']
 
 # Applying distortions to data
 df_sales['sales_volume'] = df_sales['sales_volume'].apply(add_noise_sales_volume)
-df_sales['price'] = df_sales['price'].apply(add_noise_price)
+# df_sales['price'] = df_sales['price'].apply(add_noise_price)
 df_sales['holiday_influence'] = df_sales['holiday_influence'].apply(add_noise_holiday_influence)
 df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(add_noise_marketing_spend)
 
 # # To restore, we will add information about where and how the changes were made
 df_sales['sales_volume_noise'] = df_sales['sales_volume'] / df_sales['sales_volume'].apply(lambda x: add_noise_sales_volume(x))
-df_sales['price_noise'] = df_sales['price'] / df_sales['sales_volume'].apply(lambda x: add_noise_price(x))
+df_sales['price_noise'] = df_sales['price'] / df_sales['sales_volume'].apply(lambda x: add_noise_price(x)[1])  # Only use noise
 df_sales['holiday_influence_noise'] = df_sales['holiday_influence'] != df_sales['holiday_influence'].apply(lambda x: add_noise_holiday_influence(x))
 
 # edit format 30 % prices

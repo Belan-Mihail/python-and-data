@@ -36,6 +36,8 @@ def restore_price_column(price, price_noise):
     if isinstance(price, str) and price.startswith('$'):
         # Remove the '$' symbol and convert it back to a number
         price = float(price[1:])
+    elif isinstance(price, str):
+        price = float(price)
     
     # Restore the price by dividing by the noise factor
     return round(price / price_noise, 2)

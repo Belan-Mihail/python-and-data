@@ -12,3 +12,8 @@ print('-' * 20)
 print('Data type information')
 print(df_sales.info())
 print('-' * 20)
+
+# Statistical description of data
+print('Statistical description of data')
+print(df_sales.describe())
+print('-' * 20)

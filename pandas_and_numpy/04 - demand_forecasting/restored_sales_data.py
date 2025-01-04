@@ -32,17 +32,27 @@ print(df_sales['price'].unique())
 print('-' * 20)
 
 # Restoring the price column
-def restore_price_column(price, price_noise):
-    if isinstance(price, str) and price.startswith('$'):
-        # Remove the '$' symbol and convert it back to a number
-        price = float(price[1:])
-    elif isinstance(price, str):
-        price = float(price)
-    
-    
-    # Restore the price by dividing by the noise factor
-    restored_price = round(price / (1 + price_noise), 2)
-    return restored_price
+def restore_price(row):
+    if pd.notna(row['price_noise']):
+        # If noise is added (price_noise is not NaN), restore the price
+        price = row['price']
+        price_noise = row['price_noise']
+        
+        if isinstance(price, str) and price.startswith('$'):
+            # Remove the '$' symbol and convert to a number
+            price = float(price[1:])
+        elif isinstance(price, str):
+            price = float(price)
+        
+        # Restore the price by dividing it by (1 + price_noise)
+        restored_price = round(price / (1 + price_noise), 2)
+        return restored_price
+    else:
+        # If noise was not added, leave the price unchanged
+        return row['price']
 
-df_sales['restored_price'] = df_sales.apply(lambda row: restore_price_column(row['price'], row['price_noise']), axis=1)
-print(df_sales[['price', 'restored_price']].head(20))
+# Восстанавливаем цену только для строк, где был применён шум
+df_sales['price'] = df_sales.apply(restore_price, axis=1)
+
+# Выводим первые 10 строк для проверки
+print(df_sales.head(10))

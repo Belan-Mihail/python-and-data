@@ -5,6 +5,8 @@ import random
 # Read dataset
 df_sales = pd.read_csv('sales_data.csv')
 
+df_sales['original_price'] = df_sales['price']
+
 # Shuffle the lines randomly so that the data is not in order
 df_sales = df_sales.sample(frac=1, random_state=42)
 
@@ -82,7 +84,7 @@ df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(add_noise_market
 
 # # To restore, we will add information about where and how the changes were made
 df_sales['sales_volume_noise'] = df_sales['sales_volume'] / df_sales['sales_volume'].apply(lambda x: add_noise_sales_volume(x))
-df_sales['price_noise'] = df_sales['price'] / df_sales['sales_volume'].apply(lambda x: add_noise_price(x)[1])  # Only use noise
+# df_sales['price_noise'] = df_sales['price'] / df_sales['sales_volume'].apply(lambda x: add_noise_price(x)[1])  # Only use noise
 df_sales['holiday_influence_noise'] = df_sales['holiday_influence'] != df_sales['holiday_influence'].apply(lambda x: add_noise_holiday_influence(x))
 
 # edit format 30 % prices

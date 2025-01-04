@@ -31,8 +31,6 @@ print('Check for unique values ​​in price')
 print(df_sales['price'].unique())
 print('-' * 20)
 
-print(df_sales.head(10))
-
 # Restoring the price column
 def restore_price_column(price, price_noise):
     if isinstance(price, str) and price.startswith('$'):
@@ -41,10 +39,10 @@ def restore_price_column(price, price_noise):
     elif isinstance(price, str):
         price = float(price)
     
-    print(f"price: {price}, Price noise: {price_noise}")
+    
     # Restore the price by dividing by the noise factor
     restored_price = round(price / (1 + price_noise), 2)
     return restored_price
 
 df_sales['restored_price'] = df_sales.apply(lambda row: restore_price_column(row['price'], row['price_noise']), axis=1)
-print(df_sales[['price', 'restored_price', 'original_price']].head(10))
+print(df_sales[['price', 'restored_price']].head(20))

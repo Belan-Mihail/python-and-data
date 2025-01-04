@@ -37,7 +37,7 @@ def add_noise_sales_volume(sales_volume):
     return max(0, round(sales_volume * (1 + noise)))
 
 def add_noise_price(price):
-    noise = np.random.uniform(-0.05, 0.05)
+    noise = np.random.uniform(-0.15, 0.15)
     noisy_price = round(price * (1 + noise), 2)
     return noisy_price, noise
 
@@ -52,6 +52,7 @@ for idx in indx_to_change:
     noisy_price, noise = add_noise_price(price)
     df_sales.at[idx, 'price'] = noisy_price
     df_sales.at[idx, 'price_noise'] = noise  # Keep the noise for a specific price
+
 
 def add_noise_holiday_influence(holiday_influence):
     # Change holiday_influence with random probability (0 to 1 and vice versa)
@@ -72,7 +73,6 @@ def add_noise_marketing_spend(spend):
     else:
         return spend 
 
-df_sales['original_price'] = df_sales['price']
 
 # Applying distortions to data
 df_sales['sales_volume'] = df_sales['sales_volume'].apply(add_noise_sales_volume)

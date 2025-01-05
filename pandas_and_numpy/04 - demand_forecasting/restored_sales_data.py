@@ -73,6 +73,8 @@ df_sales['sales_volume'] = round(df_sales['sales_volume'] / df_sales['sales_volu
 
 
 # Restore holiday_influence data
-
+df_sales['holiday_influence'] = df_sales.apply(
+    lambda row: 1 - row['holiday_influence'] if row['holiday_influence_noise'] else row['holiday_influence'], axis=1
+)
 
 print(df_sales[['sales_volume', 'price', 'holiday_influence', 'holiday_influence_noise']].head(20))

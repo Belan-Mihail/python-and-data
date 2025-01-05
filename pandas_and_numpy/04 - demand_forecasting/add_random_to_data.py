@@ -69,6 +69,11 @@ def add_noise_holiday_influence(holiday_influence):
         return 1 - holiday_influence  # Инвертируем значение
     return holiday_influence
 
+def change_and_flag_noise(row):
+    original = row['holiday_influence']
+    modified = add_noise_holiday_influence(original)
+    return pd.Series([modified, original != modified])
+
 def add_noise_marketing_spend(spend):
     # With a probability of 20%, we replace the values ​​with empty, dash or "minimum"
     rand_value = np.random.rand()

@@ -56,7 +56,7 @@ def restore_price(row):
 df_sales['price'] = df_sales.apply(restore_price, axis=1)
 
 # Marketing Spend Recovery
-def restore_marketing_soend(spend):
+def restore_marketing_spend(spend):
     if spend == 'minimum':
         return 500
     elif spend in [np.nan, '-']:
@@ -65,3 +65,5 @@ def restore_marketing_soend(spend):
         return float(spend)
     except ValueError:
         return 0
+
+df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(restore_marketing_spend)

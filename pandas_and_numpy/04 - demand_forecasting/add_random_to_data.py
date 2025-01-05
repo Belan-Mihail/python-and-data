@@ -94,6 +94,7 @@ def add_noise_marketing_spend(spend):
 df_sales['sales_volume'], df_sales['sales_volume_noise'] = zip(*df_sales['sales_volume'].apply(add_sales_volumes_noise_and_save_coefficient))
 
 df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(add_noise_marketing_spend)
+df_sales[['holiday_influence', 'holiday_influence_noise']] = df_sales.apply(change_and_flag_noise, axis=1)
 
 # # To restore, we will add information about where and how the changes were made
 # df_sales['sales_volume_noise'] = df_sales['sales_volume'] / df_sales['sales_volume'].apply(lambda x: add_noise_sales_volume(x))

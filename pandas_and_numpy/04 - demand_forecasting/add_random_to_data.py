@@ -33,10 +33,18 @@ for idx in incorect_format_ind_2:
 
 
 # Functions for "artificial corruption" of data
-def add_noise_sales_volume(sales_volume):
-    # add noise in range ±20%
+# def add_noise_sales_volume(sales_volume):
+#     # add noise in range ±20%
+#     noise = np.random.uniform(-0.2, 0.2)
+#     return max(0, round(sales_volume * (1 + noise)))
+def add_sales_volumes_noise_and_save_coefficient(sales_volume):
+    # Generate random noise
     noise = np.random.uniform(-0.2, 0.2)
-    return max(0, round(sales_volume * (1 + noise)))
+    # calculate the coefficient by which the original data was multiplied
+    noise_coefficient = 1 + noise
+    # return sales data with noise and the noise factor
+    noisy_sales_volume = max(0, round(sales_volume * noise_coefficient))
+    return noisy_sales_volume, noise_coefficient
 
 def add_noise_price(price):
     noise = np.random.uniform(-0.15, 0.15)
@@ -77,13 +85,13 @@ def add_noise_marketing_spend(spend):
 
 
 # Applying distortions to data
-df_sales['sales_volume'] = df_sales['sales_volume'].apply(add_noise_sales_volume)
+# df_sales['sales_volume'] = df_sales['sales_volume'].apply(add_noise_sales_volume)
 # df_sales['price'] = df_sales['price'].apply(add_noise_price)
 df_sales['holiday_influence'] = df_sales['holiday_influence'].apply(add_noise_holiday_influence)
 df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(add_noise_marketing_spend)
 
 # # To restore, we will add information about where and how the changes were made
-df_sales['sales_volume_noise'] = df_sales['sales_volume'] / df_sales['sales_volume'].apply(lambda x: add_noise_sales_volume(x))
+# df_sales['sales_volume_noise'] = df_sales['sales_volume'] / df_sales['sales_volume'].apply(lambda x: add_noise_sales_volume(x))
 # df_sales['price_noise'] = df_sales['price'] / df_sales['sales_volume'].apply(lambda x: add_noise_price(x)[1])  # Only use noise
 df_sales['holiday_influence_noise'] = df_sales['holiday_influence'] != df_sales['holiday_influence'].apply(lambda x: add_noise_holiday_influence(x))
 

@@ -71,4 +71,4 @@ df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(restore_marketin
 # Sales volume recovery
 df_sales['sales_volume'] = df_sales['sales_volume'] / df_sales['sales_volume_noise']
 
-print(df_sales.head(10))
+# print(df_sales.head(10))

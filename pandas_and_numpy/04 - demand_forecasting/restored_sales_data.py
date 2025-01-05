@@ -71,4 +71,8 @@ df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(restore_marketin
 # Sales volume recovery
 df_sales['sales_volume'] = round(df_sales['sales_volume'] / df_sales['sales_volume_noise'])
 
-print(df_sales.head(10))
+# function that return restored holiday_influence
+def restore_holiday_influence(row):
+    if row['holiday_influence_noise']:
+        return 1 - row['holiday_influence']
+    return row['holiday_influence']

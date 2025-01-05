@@ -67,7 +67,9 @@ for idx in indx_to_change:
 def add_noise_holiday_influence(holiday_influence):
     # Change holiday_influence with random probability (0 to 1 and vice versa)
     if np.random.rand() < 0.1: # 10% chance to change value
+        
         return 1 - holiday_influence # if it was 0, it will become 1 and vice versa
+    
     return holiday_influence
 
 def add_noise_marketing_spend(spend):

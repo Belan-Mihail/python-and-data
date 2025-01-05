@@ -64,7 +64,10 @@ for idx in indx_to_change:
     df_sales.at[idx, 'price_noise'] = noise  # Keep the noise for a specific price
 
 
-
+def add_noise_holiday_influence(holiday_influence):
+    if np.random.rand() < 0.1:  # 10% шанс изменить значение
+        return 1 - holiday_influence  # Инвертируем значение
+    return holiday_influence
 
 def add_noise_marketing_spend(spend):
     # With a probability of 20%, we replace the values ​​with empty, dash or "minimum"

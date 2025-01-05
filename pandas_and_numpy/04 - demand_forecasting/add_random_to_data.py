@@ -64,13 +64,7 @@ for idx in indx_to_change:
     df_sales.at[idx, 'price_noise'] = noise  # Keep the noise for a specific price
 
 
-def add_noise_holiday_influence(holiday_influence):
-    # Change holiday_influence with random probability (0 to 1 and vice versa)
-    if np.random.rand() < 0.1: # 10% chance to change value
-        
-        return 1 - holiday_influence # if it was 0, it will become 1 and vice versa
-    
-    return holiday_influence
+
 
 def add_noise_marketing_spend(spend):
     # With a probability of 20%, we replace the values ​​with empty, dash or "minimum"
@@ -90,13 +84,13 @@ def add_noise_marketing_spend(spend):
 # df_sales['sales_volume'] = df_sales['sales_volume'].apply(add_noise_sales_volume)
 # df_sales['price'] = df_sales['price'].apply(add_noise_price)
 df_sales['sales_volume'], df_sales['sales_volume_noise'] = zip(*df_sales['sales_volume'].apply(add_sales_volumes_noise_and_save_coefficient))
-df_sales['holiday_influence'] = df_sales['holiday_influence'].apply(lambda x: add_noise_holiday_influence(x))
+
 df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(add_noise_marketing_spend)
 
 # # To restore, we will add information about where and how the changes were made
 # df_sales['sales_volume_noise'] = df_sales['sales_volume'] / df_sales['sales_volume'].apply(lambda x: add_noise_sales_volume(x))
 # df_sales['price_noise'] = df_sales['price'] / df_sales['sales_volume'].apply(lambda x: add_noise_price(x)[1])  # Only use noise
-df_sales['holiday_influence_noise'] = df_sales['holiday_influence'] != df_sales['holiday_influence'].apply(lambda x: add_noise_holiday_influence(x))
+
 
 # edit format 30 % prices
 

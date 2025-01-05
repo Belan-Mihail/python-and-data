@@ -67,3 +67,7 @@ def restore_marketing_spend(spend):
         return 0
 
 df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(restore_marketing_spend)
+
+# Sales volume recovery
+def restore_sales_volume(sales_volume, sales_volume_noise):
+    return round(sales_volume_noise/sales_volume * sales_volume)

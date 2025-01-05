@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # Read dataset
 df_sales = pd.read_csv('sales_data_with_noise.csv')
@@ -51,8 +52,16 @@ def restore_price(row):
         # If noise was not added, leave the price unchanged
         return row['price']
 
-# Восстанавливаем цену только для строк, где был применён шум
+# We restore the price only for the rows where noise was applied
 df_sales['price'] = df_sales.apply(restore_price, axis=1)
 
-# Выводим первые 10 строк для проверки
-print(df_sales.head(10))
+# Marketing Spend Recovery
+def restore_marketing_soend(spend):
+    if spend == 'minimum':
+        return 500
+    elif spend in [np.nan, '-']:
+        return 0
+    try:
+        return float(spend)
+    except ValueError:
+        return 0

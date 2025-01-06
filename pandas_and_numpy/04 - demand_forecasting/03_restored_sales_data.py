@@ -95,4 +95,4 @@ df_sales = df_sales.drop(columns=['original_price', 'price_noise', 'sales_volume
 # Restore order by 'item_id' and 'month'
 df_sales = df_sales.sort_values(by=['item_id', 'month']).reset_index(drop=True)
 
-print(df_sales.head(20))
+df_sales.to_csv('restored_sales_data.csv', index=False)

@@ -92,4 +92,7 @@ df_sales['month'] = df_sales['month'].apply(convert_to_standart_format)
 # delete unnecessary columns from DF
 df_sales = df_sales.drop(columns=['original_price', 'price_noise', 'sales_volume_noise', 'holiday_influence_noise'])
 
-print(df_sales.head(10))
+# Restore order by 'item_id' and 'month'
+df_sales = df_sales.sort_values(by=['item_id', 'month']).reset_index(drop=True)
+
+print(df_sales.head(20))

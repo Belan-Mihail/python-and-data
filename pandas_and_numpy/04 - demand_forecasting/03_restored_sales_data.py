@@ -89,4 +89,7 @@ def convert_to_standart_format(month):
 
 df_sales['month'] = df_sales['month'].apply(convert_to_standart_format)
 
-print(df_sales[['item_id', 'month']])
+# delete unnecessary columns from DF
+df_sales = df_sales.drop(columns=['original_price', 'price_noise', 'sales_volume_noise', 'holiday_influence_noise'])
+
+print(df_sales.head(10))

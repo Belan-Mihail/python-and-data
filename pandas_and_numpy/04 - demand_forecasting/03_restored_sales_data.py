@@ -77,3 +77,14 @@ df_sales['holiday_influence'] = df_sales.apply(
     lambda row: 1 - row['holiday_influence'] if row['holiday_influence_noise'] else row['holiday_influence'], axis=1
 )
 
+
+# function to convert all month into a single format
+def convert_to_standart_format(month):
+    for date_format in ['%Y-%m', '%d-%m-%Y', '%b %d, %Y']:
+        try:
+            return pd.to_datetime(month, format=date_format).strftime('%Y-%m')
+        except ValueError:
+            continue
+    return month
+
+print(df_sales.head(10))

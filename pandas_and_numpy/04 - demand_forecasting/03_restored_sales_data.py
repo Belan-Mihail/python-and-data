@@ -87,4 +87,6 @@ def convert_to_standart_format(month):
             continue
     return month
 
-print(df_sales.head(10))
+df_sales['month'] = df_sales['month'].apply(convert_to_standart_format)
+
+print(df_sales[['item_id', 'month']])

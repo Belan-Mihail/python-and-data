@@ -6,6 +6,9 @@ from sklearn.preprocessing import StandardScaler
 
 df_sales = pd.read_csv('restored_sales_data.csv')
 
+# Convert 'month' to datetime type
+df_sales['month'] = pd.to_datetime(df_sales['month'], format='%Y-%m')
+
 # Define features and target variable
 X = df_sales[['item_id', 'month', 'price', 'holiday_influence', 'marketing_spend']]
 y = df_sales['sales_volume']

@@ -39,3 +39,7 @@ print(f"Mean Square Error (MSE): {mse}")
 # Root Mean Square Error (RMSE)
 rmse = root_mean_squared_error(y_test, y_pred)
 print(f"Root Mean Square Error (RMSE): {rmse}")
+
+# Mean Absolute Error (MAE)
+mea = mean_absolute_error(y_test, y_pred)
+print(f"Mean Absolute Error (MEA): {mea}")

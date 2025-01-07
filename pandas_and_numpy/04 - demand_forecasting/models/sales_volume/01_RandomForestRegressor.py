@@ -9,8 +9,13 @@ df_sales = pd.read_csv('restored_sales_data.csv')
 # Convert 'month' to datetime type
 df_sales['month'] = pd.to_datetime(df_sales['month'], format='%Y-%m')
 
+# Extract year and month from date and add them to DataFrame as numeric features
+df_sales['year'] = df_sales['month'].dt.year
+df_sales['month_number'] = df_sales['month'].dt.month
+
+
 # Define features and target variable
-X = df_sales[['item_id', 'month', 'price', 'holiday_influence', 'marketing_spend']]
+X = df_sales[['item_id', 'year', 'month_number', 'price', 'holiday_influence', 'marketing_spend']]
 y = df_sales['sales_volume']
 
 # Divide the data into training and testing samples

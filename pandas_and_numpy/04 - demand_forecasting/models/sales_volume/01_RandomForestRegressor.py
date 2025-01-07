@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, root_mean_squared_error
 from sklearn.preprocessing import StandardScaler
 
 df_sales = pd.read_csv('restored_sales_data.csv')
@@ -35,3 +35,7 @@ print(y_pred)
 # Mean Square Error (MSE)
 mse = mean_squared_error(y_test, y_pred)
 print(f"Mean Square Error (MSE): {mse}")
+
+# Root Mean Square Error (RMSE)
+rmse = root_mean_squared_error(y_test, y_pred)
+print(f"Root Mean Square Error (RMSE): {rmse}")

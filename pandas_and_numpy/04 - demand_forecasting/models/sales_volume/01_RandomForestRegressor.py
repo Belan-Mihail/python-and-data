@@ -43,3 +43,7 @@ print(f"Root Mean Square Error (RMSE): {rmse}")
 # Mean Absolute Error (MAE)
 mea = mean_absolute_error(y_test, y_pred)
 print(f"Mean Absolute Error (MEA): {mea}")
+
+# Coefficient of determination (R²)
+r2 = r2_score(y_test, y_pred)
+print(f"R²: {r2}")

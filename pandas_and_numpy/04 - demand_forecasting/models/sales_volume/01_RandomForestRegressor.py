@@ -12,6 +12,7 @@ df_sales['month'] = pd.to_datetime(df_sales['month'], format='%Y-%m')
 # Extract year and month from date and add them to DataFrame as numeric features
 df_sales['year'] = df_sales['month'].dt.year
 df_sales['month_number'] = df_sales['month'].dt.month
+df_sales = df_sales.drop(columns='month')
 
 
 # Define features and target variable

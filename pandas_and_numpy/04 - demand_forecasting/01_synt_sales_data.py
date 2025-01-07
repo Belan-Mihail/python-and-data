@@ -3,8 +3,8 @@ import numpy as np
 
 # parameters for data generation
 num_products = 10 
-num_month = 12
-start_date = pd.to_datetime('2024-01-01') # starting data
+num_month = 36
+start_date = pd.to_datetime('2022-01-01') # starting data
 data_range = pd.date_range(start_date, periods=num_month, freq='MS')
 
 # generate data

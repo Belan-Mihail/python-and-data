@@ -33,3 +33,9 @@ future_df['predicted_sales_volume'] = predicted_sales
 
 # save data_frame as csv
 future_df.to_csv('predicted_sales_2025_RandomForestRegressor.csv', index=False)
+
+
+# Now, for item_id = 1, we will generate predictions for different marketing_spend values
+
+# Initialize a list for storing the new data
+future_sales_for_item = []

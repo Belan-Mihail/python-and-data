@@ -48,18 +48,26 @@ marketing_spend_values = [1000, 2000, 3000, 4000, 5000]
 for marketing_spend in marketing_spend_values:
     for month in range(1, 13):  # for each month of the year
         # create a row with the same item_id and month, but different marketing_spend
+        # Here, we ensure that all columns needed by the model are present
+        new_row = {
+            'item_id': item_id,
+            'year': future_year,
+            'month_number': month,
+            'price': round(np.random.uniform(15, 20), 2),  # price remains random
+            'holiday_influence': np.random.choice([0, 1], p=[0.7, 0.3]),  # holiday influence remains random
+            'marketing_spend': marketing_spend
+        }
+        
+        # Make prediction for the given row
+        predicted_sales_volume = model.predict(pd.DataFrame([new_row]))[0]
+        
+        # Append the prediction to the list
         future_sales_for_item.append({
             'month_number': month,
             'marketing_spend': marketing_spend,
-            'predicted_sales_volume': model.predict(pd.DataFrame([{
-                'item_id': item_id,
-                'year': future_year,
-                'month_number': month,
-                'price': round(np.random.uniform(15, 20), 2),  # price remains random
-                'holiday_influence': np.random.choice([0, 1], p=[0.7, 0.3])  # holiday influence remains random
-            }]))[0]  # get the prediction from the model
+            'predicted_sales_volume': predicted_sales_volume
         })
-
+        
 # Now, convert this new data into a DataFrame
 sales_for_item_df = pd.DataFrame(future_sales_for_item)
 

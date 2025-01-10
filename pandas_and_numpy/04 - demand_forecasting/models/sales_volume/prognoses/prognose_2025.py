@@ -59,3 +59,12 @@ for marketing_spend in marketing_spend_values:
                 'holiday_influence': np.random.choice([0, 1], p=[0.7, 0.3])  # holiday influence remains random
             }]))[0]  # get the prediction from the model
         })
+
+# Now, convert this new data into a DataFrame
+sales_for_item_df = pd.DataFrame(future_sales_for_item)
+
+# Pivot the table to get marketing_spend values as columns
+pivot_df = sales_for_item_df.pivot(index='month_number', columns='marketing_spend', values='predicted_sales_volume')
+
+# Now, save the pivot DataFrame to a CSV file
+pivot_df.to_csv('predicted_sales_for_item_1_by_marketing_spend.csv')

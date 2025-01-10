@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, root_mean_squared_error
 from sklearn.preprocessing import StandardScaler
+import joblib
 
 df_sales = pd.read_csv('restored_sales_data.csv')
 
@@ -47,3 +48,6 @@ print(f"Mean Absolute Error (MEA): {mea}")
 # Coefficient of determination (R²)
 r2 = r2_score(y_test, y_pred)
 print(f"R²: {r2}")
+
+# save model
+joblib.dump(model, 'sales_model.pkl')

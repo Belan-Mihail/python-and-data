@@ -3,7 +3,7 @@ import numpy as np
 import joblib
 
 # load model
-model = joblib('sales_model.pkl')
+model = joblib.load('sales_model.pkl')
 
 # generation data for next 2025
 num_product = 10
@@ -28,3 +28,8 @@ future_df = pd.DataFrame(future_data)
 # make prognose
 predicted_sales = model.predict(future_df)
 
+# add predicted_sales to DF
+future_df['predicted_sales_volume'] = predicted_sales
+
+# save data_frame as csv
+future_df.to_csv('predicted_sales_2025_RandomForestRegressor.csv', index=False)

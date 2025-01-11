@@ -10,3 +10,12 @@ df_sales = pd.read_csv('restored_sales_data.csv')
 
 # Transform categorical variables
 label_encoder = LabelEncoder()
+
+# Convert 'item_id' to numeric format
+df_sales['item_id'] = label_encoder.fit_transform(df_sales['item_id'])
+
+# Fill in the missing values ​​in marketing expenses
+df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(pd.to_numeric, errors = 'coerce').fillna(0)
+
+# Convert 'price' to number format (if needed)
+df_sales['price'] = df_sales['price'].replace({'\$': '', ',': ''}, regex=True).astype(float)

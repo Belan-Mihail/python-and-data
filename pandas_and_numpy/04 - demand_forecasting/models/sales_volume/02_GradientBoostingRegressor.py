@@ -35,3 +35,7 @@ model.fit(X_train, y_train)
 
 # forecast on test sample
 y_pred = model.predict(X_test)
+
+# model evaluation
+mse = mean_squared_error(y_test, y_pred)
+print(f'MSE: {mse}')

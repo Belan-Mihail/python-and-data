@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import LabelEncoder
+import joblib
 
 # Loading cleaned data
 df_sales = pd.read_csv('restored_sales_data.csv')
@@ -18,7 +19,8 @@ df_sales['item_id'] = label_encoder.fit_transform(df_sales['item_id'])
 df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(pd.to_numeric, errors = 'coerce').fillna(0)
 
 # Convert 'price' to number format (if needed)
-df_sales['price'] = df_sales['price'].replace({'\$': '', ',': ''}, regex=True).astype(float)
+df_sales['price'] = df_sales['price'].replace({r'\$': '', r',': ''}, regex=True).astype(float)
+
 
 # features and target variable
 X = df_sales[['price', 'holiday_influence', 'marketing_spend', 'item_id']]
@@ -38,4 +40,7 @@ y_pred = model.predict(X_test)
 
 # model evaluation
 mse = mean_squared_error(y_test, y_pred)
-print(f'MSE: {mse}')
+print(f'MSE: {mse: .2f}')
+
+# saving model
+joblib.dump(model, 'sales_PM_GradientBoostingRegressor.pkl')

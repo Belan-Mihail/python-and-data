@@ -32,3 +32,6 @@ model = GradientBoostingRegressor(n_estimators=100, random_state=42)
 
 # training model
 model.fit(X_train, y_train)
+
+# forecast on test sample
+y_pred = model.predict(X_test)

@@ -24,9 +24,11 @@ df_sales['price'] = df_sales['price'].replace({r'\$': '', r',': ''}, regex=True)
 # Convert the month column to datetime format
 df_sales['month'] = pd.to_datetime(df_sales['month'], format='%Y-%m')
 
+# Extract the month as a numeric attribute
+df_sales['month_num'] = df_sales['month'].dt.month
 
 # features and target variable
-X = df_sales[['price', 'holiday_influence', 'marketing_spend', 'item_id']]
+X = df_sales[['price', 'holiday_influence', 'marketing_spend', 'item_id', 'month_num']]
 y = df_sales['sales_volume']
 
 # training and test sample

@@ -22,6 +22,12 @@ for item_id in range(1, num_product + 1):
 # make Dataframe from future_data
 future_df = pd.DataFrame(future_data)
 
+# # The order of columns that was used when training the model
+X_columns = ['price', 'holiday_influence', 'marketing_spend', 'item_id', 'month_num']
+
+# Make sure the columns in future_df match the order of X_columns
+future_df = future_df[X_columns]
+
 # make forecast
 predict_sales = model.predict(future_df)
 

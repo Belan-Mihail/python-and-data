@@ -19,3 +19,7 @@ df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(pd.to_numeric, e
 
 # Convert 'price' to number format (if needed)
 df_sales['price'] = df_sales['price'].replace({'\$': '', ',': ''}, regex=True).astype(float)
+
+# features and target variable
+X = df_sales[['price', 'holiday_influence', 'marketing_spend', 'item_id']]
+y = df_sales['sales_volume']

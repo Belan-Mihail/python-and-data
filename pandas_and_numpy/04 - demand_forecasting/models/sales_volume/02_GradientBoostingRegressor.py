@@ -23,3 +23,6 @@ df_sales['price'] = df_sales['price'].replace({'\$': '', ',': ''}, regex=True).a
 # features and target variable
 X = df_sales[['price', 'holiday_influence', 'marketing_spend', 'item_id']]
 y = df_sales['sales_volume']
+
+# training and test sample
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

@@ -18,3 +18,6 @@ for item_id in range(1, num_product + 1):
             'holiday_influence': np.random.choice([0, 1], p=[0.7, 0.3]),
             'marketing_spend': round(np.random.uniform(1000, 5000), 2) 
         }) 
+
+# make Dataframe from future_data
+future_df = pd.DataFrame(future_data)

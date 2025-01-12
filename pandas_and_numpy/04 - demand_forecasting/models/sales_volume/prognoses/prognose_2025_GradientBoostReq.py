@@ -21,3 +21,12 @@ for item_id in range(1, num_product + 1):
 
 # make Dataframe from future_data
 future_df = pd.DataFrame(future_data)
+
+# make forecast
+predict_sales = model.predict(future_df)
+
+# add predicted_sales to DF
+future_df['predicted_sales'] = predict_sales
+
+# save data_frame as csv
+future_df.to_csv('predicted_sales_2025_GradBootRegress.csv', index=False)

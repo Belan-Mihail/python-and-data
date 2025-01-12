@@ -21,6 +21,9 @@ df_sales['marketing_spend'] = df_sales['marketing_spend'].apply(pd.to_numeric, e
 # Convert 'price' to number format (if needed)
 df_sales['price'] = df_sales['price'].replace({r'\$': '', r',': ''}, regex=True).astype(float)
 
+# Convert the month column to datetime format
+df_sales['month'] = pd.to_datetime(df_sales['month'], format='%Y-%m')
+
 
 # features and target variable
 X = df_sales[['price', 'holiday_influence', 'marketing_spend', 'item_id']]

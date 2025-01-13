@@ -39,3 +39,7 @@ columns_to_increase = ['hp', 'disp', 'wt', 'qsec']
 
 # Increase the selected columns by 20%
 df_increased[columns_to_increase] = df_increased[columns_to_increase] * 1.2
+
+# Features (X) for the new DataFrame (no need for 'y' since we are using the model for prediction)
+X_increased = df_increased.drop('mpg', axis=1)
+

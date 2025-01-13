@@ -36,3 +36,6 @@ df_increased = df.copy()
 
 # Define the columns to increase by 20%
 columns_to_increase = ['hp', 'disp', 'wt', 'qsec']
+
+# Increase the selected columns by 20%
+df_increased[columns_to_increase] = df_increased[columns_to_increase] * 1.2

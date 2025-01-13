@@ -28,5 +28,9 @@ y_pred = model.predict(X_test)
 
 mse = mean_squared_error(y_test, y_pred)
 mae = mean_absolute_error(y_test, y_pred)
-print(f"Mean Squared Error: {mse}")
-print(f"Mean Absolute Error: {mae}")
+print(f"Mean Squared Error: {mse: .2f}")
+print(f"Mean Absolute Error: {mae: .2f}")
+
+# create a new DataFrame with 20% increased values for certain columns
+df_increased = df.copy()
+

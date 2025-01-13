@@ -34,3 +34,5 @@ print(f"Mean Absolute Error: {mae: .2f}")
 # create a new DataFrame with 20% increased values for certain columns
 df_increased = df.copy()
 
+# Define the columns to increase by 20%
+columns_to_increase = ['hp', 'disp', 'wt', 'qsec']

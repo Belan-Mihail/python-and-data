@@ -30,6 +30,7 @@ mse = mean_squared_error(y_test, y_pred)
 mae = mean_absolute_error(y_test, y_pred)
 print(f"Mean Squared Error: {mse: .2f}")
 print(f"Mean Absolute Error: {mae: .2f}")
+print(y_pred)
 
 # create a new DataFrame with 20% increased values for certain columns
 df_increased = df.copy()
@@ -43,3 +44,9 @@ df_increased[columns_to_increase] = df_increased[columns_to_increase] * 1.2
 # Features (X) for the new DataFrame (no need for 'y' since we are using the model for prediction)
 X_increased = df_increased.drop('mpg', axis=1)
 
+# Predict using the trained model on the new data (increased values)
+y_pred_increased = model.predict(X_increased)
+
+# Display the predictions for the new data
+print("Predictions on increased data (20% increase):")
+print(y_pred_increased)

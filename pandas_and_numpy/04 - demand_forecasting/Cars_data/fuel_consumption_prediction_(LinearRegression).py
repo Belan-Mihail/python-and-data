@@ -6,8 +6,11 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 # Read dataset
 df = pd.read_csv('./Cars_data/Cars.csv')
 
+# Check column names to ensure there is no empty column
+print(df.columns)
+
 # Drop the first column (car names) since it's not a numeric feature
-df = df.drop(columns=[''])
+df = df.drop(columns=['Unnamed: 0'])
 
 # Features (X) and target variable (y)
 X = df.drop('mpg', axis=1)

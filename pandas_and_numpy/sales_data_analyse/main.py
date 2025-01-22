@@ -5,18 +5,17 @@ import seaborn as sns
 
 
 # 1 loading data from csv
-df = pd.read_csv("sales_data.csv")
+df = pd.read_csv("List.csv")
 # print(df)
 
 # 2 Converting the 'Date' column to date format
-df['Date'] = pd.to_datetime(df['Date'])
-# print(df)
+print(df.head())
 
 # 3 Which regions showed the highest sales volume over the entire period?
-total_sales_by_region = df.groupby('Region')['Sales'].sum()
-print(f"Analyse by region and sales summ:\n", total_sales_by_region)
-total_sales_by_region = total_sales_by_region.sort_values(ascending=False)
-print(f"Sorting by values:\n", total_sales_by_region)
+# total_sales_by_region = df.groupby('Region')['Sales'].sum()
+# print(f"Analyse by region and sales summ:\n", total_sales_by_region)
+# total_sales_by_region = total_sales_by_region.sort_values(ascending=False)
+# print(f"Sorting by values:\n", total_sales_by_region)
 
 # 3.1 total_sales_by_region = df.groupby('Region')['Sales'].sum()
 """
@@ -185,11 +184,11 @@ df_five = df[df['Company'].isin(five_companies)]
 # 28 sns.heatmap(sales_by_region_company, annot=True, fmt='.2f')
 # plt.show()
 
-sales_by_date_df_five = df_five.groupby(['Date', 'Company'])['Sales'].sum().unstack()
-print(sales_by_date_df_five)
-print("-" * 20)
-sales_by_date_df_five = sales_by_date_df_five.fillna(0)
-print(sales_by_date_df_five)
+# sales_by_date_df_five = df_five.groupby(['Date', 'Company'])['Sales'].sum().unstack()
+# print(sales_by_date_df_five)
+# print("-" * 20)
+# sales_by_date_df_five = sales_by_date_df_five.fillna(0)
+# print(sales_by_date_df_five)
 
-sales_by_date_df_five.plot(figsize=(12,6))
-plt.show()
+# sales_by_date_df_five.plot(figsize=(12,6))
+# plt.show()

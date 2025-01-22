@@ -50,3 +50,4 @@ y_pred_increased = model.predict(X_increased)
 # Display the predictions for the new data
 print("Predictions on increased data (20% increase):")
 print(y_pred_increased)
+

@@ -21,7 +21,7 @@ with PdfPages('cars_analyse.pdf') as pdf:
     pdf.savefig()
     plt.close(fig)
 
-    # 6 Relationship between "mpg" and "wt"
+    # # 6 Relationship between "mpg" and "wt"
     fig, ax = plt.subplots()
     sns.scatterplot(x='wt', y='mpg', data=df)
     plt.title('Relationship Between Weight (wt) and Fuel Efficiency (mpg)')

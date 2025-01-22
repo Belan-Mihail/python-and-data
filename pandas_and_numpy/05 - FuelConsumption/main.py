@@ -24,6 +24,15 @@ data['Odo_Diff'] = data['Odo_Diff'].apply(lambda x: max(0, x))
 
 # print(data.head(20))
 
+# Remove currency symbols '$' and convert data to numeric type
+data['Cost'] = data['Cost'].replace({'\$' : ''}, regex=True)
+
+# Convert the column to a numeric type and replace non-numeric values ​​with NaN
+data['Cost'] = pd.to_numeric(data['Cost'], errors='coerce')
+
+# Replace Nan with 0
+
+
 # Calculate the total cost
 total_cost = data['Cost'].sum()
 

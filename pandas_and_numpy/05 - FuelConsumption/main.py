@@ -22,4 +22,10 @@ data['Odo_Diff'] = data['Odo_Diff'].fillna(0)
 # Replace negative values ​​in the "Odo_Diff" column with 0
 data['Odo_Diff'] = data['Odo_Diff'].apply(lambda x: max(0, x))
 
-print(data.head(20))
+# print(data.head(20))
+
+# Calculate the total cost
+total_cost = data['Cost'].sum()
+
+# Print total cost
+print(f"Total cost of all trips: {total_cost}")

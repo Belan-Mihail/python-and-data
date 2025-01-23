@@ -20,3 +20,6 @@ name_counts = babynames.value_counts()
 chad_count = name_counts.get('Chad', 0)
 ruger_count = name_counts.get('Ruger', 0)
 zelton_count = name_counts.get('Zeltron', 0)
+
+alternative_solution = babynames.value_counts().loc[['Chad', 'Ruger', 'Zeltron']]
+print(alternative_solution)

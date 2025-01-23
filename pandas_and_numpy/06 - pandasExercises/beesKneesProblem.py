@@ -27,3 +27,9 @@ print(knees)
 # 1     5
 # 4     2  <-- double this
 # dtype: int64
+
+# Double the value in knees where bees is Na
+# knees[bees.isna()] = knees[bees.isna()] * 2
+knees.loc[pd.isna(bees).to_numpy()] *= 2
+
+print(knees)

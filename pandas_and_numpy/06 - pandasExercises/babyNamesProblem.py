@@ -14,3 +14,9 @@ babynames = pd.Series([
 
 # !Task
 # Determine how many people voted for the names ‘Chad’, ‘Ruger’, and ‘Zeltron’.
+
+name_counts = babynames.value_counts()
+
+chad_count = name_counts.get('Chad', 0)
+ruger_count = name_counts.get('Ruger', 0)
+zelton_count = name_counts.get('Zeltron', 0)

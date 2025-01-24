@@ -21,8 +21,10 @@ print(chipo.shape[1])
 # 5
  
 # Step 7. Print the name of all the columns.
+print(chipo.columns)
  
 # Step 8. How is the dataset indexed?
+print(chipo.index)
  
 # Step 9. Which was the most-ordered item?
  

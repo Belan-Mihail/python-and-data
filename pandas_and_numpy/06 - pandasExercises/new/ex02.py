@@ -36,8 +36,12 @@ most_ordered_item_quantity = chipo.groupby('item_name').sum()['quantity'].max()
 print(most_ordered_item_quantity)
  
 # Step 11. What was the most ordered item in the choice_description column?
+most_ordered_choice_description = chipo.groupby('choice_description').value_counts().idxmax()
+print(most_ordered_choice_description)
  
 # Step 12. How many items were orderd in total?
+total_item_oders = chipo['quantity'].sum()
+print(total_item_oders)
  
 # Step 13. Turn the item price into a float
 # Step 13.a. Check the item price type

@@ -56,8 +56,13 @@ print(total_revenue)
 # 39237.02
  
 # Step 15. How many orders were made in the period?
+total_orders = chipo['order_id'].nunique()
+print(total_item_oders)
  
 # Step 16. What is the average revenue amount per order?
-# # Solution 1
-# # Solution 2
+average_revenue_per_order = total_revenue / total_orders
+print(average_revenue_per_order)
+
 # Step 17. How many different items are sold?
+unique_items_sold = chipo['item_name'].nunique()
+print(unique_items_sold)

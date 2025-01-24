@@ -44,13 +44,16 @@ total_item_oders = chipo['quantity'].sum()
 print(total_item_oders)
  
 # Step 13. Turn the item price into a float
+chipo['item_price'] = chipo['item_price'].apply(lambda x: float(x[1:]))
 # Step 13.a. Check the item price type
+print(chipo['item_price'].dtype)
  
-# Step 13.b. Create a lambda function and change the type of item price
- 
-# Step 13.c. Check the item price type
  
 # Step 14. How much was the revenue for the period in the dataset?
+chipo['revenue'] = chipo['item_price'] * chipo['quantity']
+total_revenue = chipo['revenue'].sum()
+print(total_revenue)
+# 39237.02
  
 # Step 15. How many orders were made in the period?
  

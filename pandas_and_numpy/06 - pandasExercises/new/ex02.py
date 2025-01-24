@@ -27,8 +27,13 @@ print(chipo.columns)
 print(chipo.index)
  
 # Step 9. Which was the most-ordered item?
- 
+most_ordered_item = chipo.groupby('item_name').sum()['quantity'].idxmax()
+print(most_ordered_item)
+# Chicken Bowl
+
 # Step 10. For the most-ordered item, how many items were ordered?
+most_ordered_item_quantity = chipo.groupby('item_name').sum()['quantity'].max()
+print(most_ordered_item_quantity)
  
 # Step 11. What was the most ordered item in the choice_description column?
  

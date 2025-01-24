@@ -10,11 +10,15 @@ url = 'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.t
 chipo = pd.read_csv(url, sep='\t')
  
 # Step 4. See the first 10 entries
+print(chipo.head(10))
  
 # Step 5. What is the number of observations in the dataset?
-# # Solution 1
-# # Solution 2
+print(chipo.shape[0])
+# 4622
+
 # Step 6. What is the number of columns in the dataset?
+print(chipo.shape[1])
+# 5
  
 # Step 7. Print the name of all the columns.
  

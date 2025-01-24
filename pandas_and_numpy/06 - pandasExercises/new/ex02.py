@@ -27,6 +27,8 @@ print(chipo.columns)
 print(chipo.index)
  
 # Step 9. Which was the most-ordered item?
+# To find out the most popular product, we need to first count the number of orders for each product. 
+# We can use the groupby method to group by product and count the number
 most_ordered_item = chipo.groupby('item_name').sum()['quantity'].idxmax()
 print(most_ordered_item)
 # Chicken Bowl
@@ -36,6 +38,7 @@ most_ordered_item_quantity = chipo.groupby('item_name').sum()['quantity'].max()
 print(most_ordered_item_quantity)
  
 # Step 11. What was the most ordered item in the choice_description column?
+# count the number of repetitions for each value in the choice_description column
 most_ordered_choice_description = chipo.groupby('choice_description').value_counts().idxmax()
 print(most_ordered_choice_description)
  
@@ -44,22 +47,27 @@ total_item_oders = chipo['quantity'].sum()
 print(total_item_oders)
  
 # Step 13. Turn the item price into a float
+# The prices in the dataset may be in string format, so we need to convert them to numeric format. 
+# To do this, we use the apply() method and the conversion function
 chipo['item_price'] = chipo['item_price'].apply(lambda x: float(x[1:]))
 # Step 13.a. Check the item price type
 print(chipo['item_price'].dtype)
  
  
 # Step 14. How much was the revenue for the period in the dataset?
+# multiply the price by the quantity of each item.
 chipo['revenue'] = chipo['item_price'] * chipo['quantity']
 total_revenue = chipo['revenue'].sum()
 print(total_revenue)
 # 39237.02
  
 # Step 15. How many orders were made in the period?
+#  count the unique values ​​in the order_id column.
 total_orders = chipo['order_id'].nunique()
 print(total_item_oders)
  
 # Step 16. What is the average revenue amount per order?
+# divide the total revenue by the number of orders.
 average_revenue_per_order = total_revenue / total_orders
 print(average_revenue_per_order)
 

@@ -25,10 +25,13 @@ print(users.shape[0])
 print(users.shape[1])
  
 # Step 8. Print the name of all the columns.
+print(users.columns)
  
 # Step 9. How is the dataset indexed?
+print(users.index)
  
 # Step 10. What is the data type of each column?
+print(users.dtypes)
  
 # Step 11. Print only the occupation column
  

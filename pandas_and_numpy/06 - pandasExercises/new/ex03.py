@@ -54,5 +54,9 @@ print(users.describe(include='all'))
 print(users['occupation'].describe())
  
 # Step 17. What is the mean age of users?
+mean_age = users['age'].mean()
+print(mean_age)
  
 # Step 18. What is the age with least occurrence?
+least_age = users['age'].value_counts().idxmin()
+print(least_age)

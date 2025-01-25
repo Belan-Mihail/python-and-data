@@ -14,10 +14,13 @@ food = pd.read_csv('06 - pandasExercises/new/04/en.openfoodfacts.org.products.ts
 print(food.head())
  
 # Step 5. What is the number of observations in the dataset?
+print(food.shape)
  
 # Step 6. What is the number of columns in the dataset?
+print(food.shape[1])
  
 # Step 7. Print the name of all the columns.
+print(food.columns)
  
 # Step 8. What is the name of 105th column?
  

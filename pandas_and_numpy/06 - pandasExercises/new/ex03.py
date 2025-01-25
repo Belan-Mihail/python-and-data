@@ -34,10 +34,15 @@ print(users.index)
 print(users.dtypes)
  
 # Step 11. Print only the occupation column
+print(users['occupation'])
  
 # Step 12. How many different occupations are in this dataset?
+diff_occupation = users['occupation'].nunique()
+print(diff_occupation)
  
 # Step 13. What is the most frequent occupation?
+most_freq_occupantion = users['occupation'].mode()[0]
+print(most_freq_occupantion)
  
 # Step 14. Summarize the DataFrame.
  

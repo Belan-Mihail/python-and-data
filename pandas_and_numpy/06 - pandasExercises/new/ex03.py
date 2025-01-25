@@ -1,0 +1,37 @@
+# Ex3 - Getting and Knowing your Data
+# This time we are going to pull data directly from the internet. Special thanks to: https://github.com/justmarkham for sharing the dataset and materials.
+
+# Step 1. Import the necessary libraries
+ 
+# Step 2. Import the dataset from this address.
+# Step 3. Assign it to a variable called users and use the 'user_id' as index
+ 
+# Step 4. See the first 25 entries
+ 
+# Step 5. See the last 10 entries
+ 
+# Step 6. What is the number of observations in the dataset?
+ 
+# Step 7. What is the number of columns in the dataset?
+ 
+# Step 8. Print the name of all the columns.
+ 
+# Step 9. How is the dataset indexed?
+ 
+# Step 10. What is the data type of each column?
+ 
+# Step 11. Print only the occupation column
+ 
+# Step 12. How many different occupations are in this dataset?
+ 
+# Step 13. What is the most frequent occupation?
+ 
+# Step 14. Summarize the DataFrame.
+ 
+# Step 15. Summarize all the columns
+ 
+# Step 16. Summarize only the occupation column
+ 
+# Step 17. What is the mean age of users?
+ 
+# Step 18. What is the age with least occurrence?

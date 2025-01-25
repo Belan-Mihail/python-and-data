@@ -45,10 +45,13 @@ most_freq_occupantion = users['occupation'].mode()[0]
 print(most_freq_occupantion)
  
 # Step 14. Summarize the DataFrame.
+print(users.describe())
  
 # Step 15. Summarize all the columns
+print(users.describe(include='all'))
  
 # Step 16. Summarize only the occupation column
+print(users['occupation'].describe())
  
 # Step 17. What is the mean age of users?
  

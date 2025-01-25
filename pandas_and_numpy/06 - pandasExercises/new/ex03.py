@@ -2,11 +2,18 @@
 # This time we are going to pull data directly from the internet. Special thanks to: https://github.com/justmarkham for sharing the dataset and materials.
 
 # Step 1. Import the necessary libraries
+import pandas as pd
+import numpy as np
  
 # Step 2. Import the dataset from this address.
+url = 'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user'
+
+
 # Step 3. Assign it to a variable called users and use the 'user_id' as index
+users = pd.read_csv(url, index_col='user_id', sep='|', encoding='utf-8')
  
 # Step 4. See the first 25 entries
+print(users.head(25))
  
 # Step 5. See the last 10 entries
  

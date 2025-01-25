@@ -16,10 +16,13 @@ users = pd.read_csv(url, index_col='user_id', sep='|', encoding='utf-8')
 print(users.head(25))
  
 # Step 5. See the last 10 entries
+print(users.tail(10))
  
 # Step 6. What is the number of observations in the dataset?
+print(users.shape[0])
  
 # Step 7. What is the number of columns in the dataset?
+print(users.shape[1])
  
 # Step 8. Print the name of all the columns.
  
